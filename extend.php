@@ -4,6 +4,12 @@ use Flarum\Extend;
 use Flarum\Frontend\Document;
 
 return [
+    // new Blomstra\Redis\Extend\Redis([
+    //     'host' => '103.81.85.224',
+    //     'password' => "tunganh2003",
+    //     'port' => 6379,
+    //     'database' => 0,
+    // ]),
     // Inject footer vào trang forum
     (new Extend\Frontend('forum'))
         ->content(function (Document $document) {

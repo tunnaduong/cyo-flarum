@@ -29,7 +29,7 @@ export default class ChatState {
     let neonchatState = JSON.parse(localStorage.getItem('neonchat')) ?? {};
 
     this.frameState = {
-      beingShown: neonchatState.beingShown ?? app.forum.attribute('xelson-chat.settings.display.minimize'),
+      beingShown: neonchatState.beingShown ?? false,
       beingShownChatsList: neonchatState.beingShownChatsList ?? 0,
       isMuted: neonchatState.isMuted ?? false,
       notify: neonchatState.notify ?? false,

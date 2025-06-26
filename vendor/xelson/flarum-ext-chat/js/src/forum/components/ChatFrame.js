@@ -53,7 +53,7 @@ export default class ChatFrame extends Component {
     return (
       <div className="button-fixed-maximize" onclick={this.toggleChat.bind(this)}>
         {totalUnreaded ? <div className="unreaded">{totalUnreaded}</div> : null}
-        <i className="fas fa-cloud"></i>
+        <i className="fas fa-comments"></i>
       </div>
     );
   }

@@ -41,6 +41,7 @@ return array(
     '04b6576f786ea6b5b4b577af08f8e4d1' => $vendorDir . '/symfony/polyfill-intl-messageformatter/bootstrap.php',
     '84245cb95409c51c4ae97f8e59da883a' => $vendorDir . '/flarum/core/src/helpers.php',
     'ad155f8f1cf0d418fe49e248db8c661b' => $vendorDir . '/react/promise/src/functions_include.php',
+    '61ba3e92ef91a7a0f1cc260ebd9290e4' => $vendorDir . '/openai-php/client/src/OpenAI.php',
     '2a1113d34562ecc8c338eb5d2958a97a' => $vendorDir . '/fof/nightmode/src/Overrides/Forum/ValidateCustomLess.php',
     'd7a2467b87902a3ab793df7784bc6b7f' => $vendorDir . '/fof/nightmode/src/Overrides/Frontend/Assets.php',
     '1cf00d7bbe38b83167217839a255780f' => $vendorDir . '/fof/nightmode/src/Overrides/Frontend/RecompileFrontendAssets.php',

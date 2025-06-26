@@ -1,0 +1,1402 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Generation Time: Jun 26, 2025 at 12:20 AM
+-- Server version: 8.0.30
+-- PHP Version: 8.3.20
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `cyo-forum`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_access_tokens`
+--
+
+CREATE TABLE `cyo_access_tokens` (
+  `id` int UNSIGNED NOT NULL,
+  `token` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` int UNSIGNED NOT NULL,
+  `last_activity_at` datetime DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_ip_address` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_user_agent` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cyo_access_tokens`
+--
+
+INSERT INTO `cyo_access_tokens` (`id`, `token`, `user_id`, `last_activity_at`, `created_at`, `type`, `title`, `last_ip_address`, `last_user_agent`) VALUES
+(2, 'sW5oL9hVjwSpa8SgGB25ys2KQmZm9D7tZ4P6Rd3Z', 1, '2025-06-25 15:00:23', '2025-06-25 12:35:41', 'session', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_api_keys`
+--
+
+CREATE TABLE `cyo_api_keys` (
+  `key` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` int UNSIGNED NOT NULL,
+  `allowed_ips` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `scopes` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_id` int UNSIGNED DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `last_activity_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_discussions`
+--
+
+CREATE TABLE `cyo_discussions` (
+  `id` int UNSIGNED NOT NULL,
+  `title` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `comment_count` int NOT NULL DEFAULT '1',
+  `participant_count` int UNSIGNED NOT NULL DEFAULT '0',
+  `post_number_index` int UNSIGNED NOT NULL DEFAULT '0',
+  `created_at` datetime NOT NULL,
+  `user_id` int UNSIGNED DEFAULT NULL,
+  `first_post_id` int UNSIGNED DEFAULT NULL,
+  `last_posted_at` datetime DEFAULT NULL,
+  `last_posted_user_id` int UNSIGNED DEFAULT NULL,
+  `last_post_id` int UNSIGNED DEFAULT NULL,
+  `last_post_number` int UNSIGNED DEFAULT NULL,
+  `hidden_at` datetime DEFAULT NULL,
+  `hidden_user_id` int UNSIGNED DEFAULT NULL,
+  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `is_private` tinyint(1) NOT NULL DEFAULT '0',
+  `is_approved` tinyint(1) NOT NULL DEFAULT '1',
+  `is_sticky` tinyint(1) NOT NULL DEFAULT '0',
+  `is_locked` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cyo_discussions`
+--
+
+INSERT INTO `cyo_discussions` (`id`, `title`, `comment_count`, `participant_count`, `post_number_index`, `created_at`, `user_id`, `first_post_id`, `last_posted_at`, `last_posted_user_id`, `last_post_id`, `last_post_number`, `hidden_at`, `hidden_user_id`, `slug`, `is_private`, `is_approved`, `is_sticky`, `is_locked`) VALUES
+(1, 'Xin chào thế giới!!', 1, 1, 0, '2025-06-25 13:01:18', 1, 1, '2025-06-25 13:01:18', 1, 1, 1, NULL, NULL, 'xin-chao-the-gioi', 0, 1, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_discussion_tag`
+--
+
+CREATE TABLE `cyo_discussion_tag` (
+  `discussion_id` int UNSIGNED NOT NULL,
+  `tag_id` int UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cyo_discussion_tag`
+--
+
+INSERT INTO `cyo_discussion_tag` (`discussion_id`, `tag_id`, `created_at`) VALUES
+(1, 1, '2025-06-25 13:01:18');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_discussion_user`
+--
+
+CREATE TABLE `cyo_discussion_user` (
+  `user_id` int UNSIGNED NOT NULL,
+  `discussion_id` int UNSIGNED NOT NULL,
+  `last_read_at` datetime DEFAULT NULL,
+  `last_read_post_number` int UNSIGNED DEFAULT NULL,
+  `subscription` enum('follow','ignore') COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cyo_discussion_user`
+--
+
+INSERT INTO `cyo_discussion_user` (`user_id`, `discussion_id`, `last_read_at`, `last_read_post_number`, `subscription`) VALUES
+(1, 1, '2025-06-25 13:01:18', 1, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_email_tokens`
+--
+
+CREATE TABLE `cyo_email_tokens` (
+  `token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(254) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` int UNSIGNED NOT NULL,
+  `created_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_extension_manager_tasks`
+--
+
+CREATE TABLE `cyo_extension_manager_tasks` (
+  `id` int UNSIGNED NOT NULL,
+  `status` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `operation` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `command` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `package` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `output` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `guessed_cause` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NOT NULL,
+  `started_at` timestamp NULL DEFAULT NULL,
+  `finished_at` timestamp NULL DEFAULT NULL,
+  `peak_memory_used` mediumint UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_flags`
+--
+
+CREATE TABLE `cyo_flags` (
+  `id` int UNSIGNED NOT NULL,
+  `post_id` int UNSIGNED NOT NULL,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` int UNSIGNED DEFAULT NULL,
+  `reason` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `reason_detail` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `created_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_groups`
+--
+
+CREATE TABLE `cyo_groups` (
+  `id` int UNSIGNED NOT NULL,
+  `name_singular` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name_plural` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `color` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `icon` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_hidden` tinyint(1) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cyo_groups`
+--
+
+INSERT INTO `cyo_groups` (`id`, `name_singular`, `name_plural`, `color`, `icon`, `is_hidden`, `created_at`, `updated_at`) VALUES
+(1, 'Admin', 'Admins', '#B72A2A', 'fas fa-wrench', 0, NULL, NULL),
+(2, 'Guest', 'Guests', NULL, NULL, 0, NULL, NULL),
+(3, 'Member', 'Members', NULL, NULL, 0, NULL, NULL),
+(4, 'Mod', 'Mods', '#80349E', 'fas fa-bolt', 0, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_group_permission`
+--
+
+CREATE TABLE `cyo_group_permission` (
+  `group_id` int UNSIGNED NOT NULL,
+  `permission` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cyo_group_permission`
+--
+
+INSERT INTO `cyo_group_permission` (`group_id`, `permission`, `created_at`) VALUES
+(2, 'viewForum', NULL),
+(2, 'xelson-chat.permissions.enabled', '2025-06-25 13:10:48'),
+(3, 'discussion.flagPosts', '2025-06-25 12:34:35'),
+(3, 'discussion.likePosts', '2025-06-25 12:34:37'),
+(3, 'discussion.reply', NULL),
+(3, 'discussion.replyWithoutApproval', '2025-06-25 12:34:35'),
+(3, 'discussion.startWithoutApproval', '2025-06-25 12:34:35'),
+(3, 'searchUsers', NULL),
+(3, 'startDiscussion', NULL),
+(3, 'user.beFollowed', '2025-06-25 13:07:29'),
+(3, 'user.editOwnNickname', '2025-06-25 12:51:17'),
+(3, 'xelson-chat.permissions.chat', '2025-06-25 13:10:48'),
+(3, 'xelson-chat.permissions.create', '2025-06-25 13:10:48'),
+(3, 'xelson-chat.permissions.delete', '2025-06-25 13:10:48'),
+(3, 'xelson-chat.permissions.edit', '2025-06-25 13:10:48'),
+(4, 'discussion.approvePosts', '2025-06-25 12:34:35'),
+(4, 'discussion.editPosts', NULL),
+(4, 'discussion.hide', NULL),
+(4, 'discussion.hidePosts', NULL),
+(4, 'discussion.lock', '2025-06-25 12:34:37'),
+(4, 'discussion.rename', NULL),
+(4, 'discussion.sticky', '2025-06-25 12:34:37'),
+(4, 'discussion.tag', '2025-06-25 12:34:36'),
+(4, 'discussion.viewFlags', '2025-06-25 12:34:35'),
+(4, 'discussion.viewIpsPosts', NULL),
+(4, 'user.suspend', '2025-06-25 12:34:36'),
+(4, 'user.viewLastSeenAt', NULL),
+(4, 'xelson-chat.permissions.create.channel', '2025-06-25 13:10:48'),
+(4, 'xelson-chat.permissions.moderate.delete', '2025-06-25 13:10:48'),
+(4, 'xelson-chat.permissions.moderate.vision', '2025-06-25 13:10:48');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_group_user`
+--
+
+CREATE TABLE `cyo_group_user` (
+  `user_id` int UNSIGNED NOT NULL,
+  `group_id` int UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cyo_group_user`
+--
+
+INSERT INTO `cyo_group_user` (`user_id`, `group_id`, `created_at`) VALUES
+(1, 1, '2025-06-25 12:34:35'),
+(1, 4, '2025-06-25 12:54:04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_login_providers`
+--
+
+CREATE TABLE `cyo_login_providers` (
+  `id` int UNSIGNED NOT NULL,
+  `user_id` int UNSIGNED NOT NULL,
+  `provider` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `identifier` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `last_login_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_migrations`
+--
+
+CREATE TABLE `cyo_migrations` (
+  `id` int UNSIGNED NOT NULL,
+  `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `extension` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cyo_migrations`
+--
+
+INSERT INTO `cyo_migrations` (`id`, `migration`, `extension`) VALUES
+(1, '2015_02_24_000000_create_access_tokens_table', NULL),
+(2, '2015_02_24_000000_create_api_keys_table', NULL),
+(3, '2015_02_24_000000_create_config_table', NULL),
+(4, '2015_02_24_000000_create_discussions_table', NULL),
+(5, '2015_02_24_000000_create_email_tokens_table', NULL),
+(6, '2015_02_24_000000_create_groups_table', NULL),
+(7, '2015_02_24_000000_create_notifications_table', NULL),
+(8, '2015_02_24_000000_create_password_tokens_table', NULL),
+(9, '2015_02_24_000000_create_permissions_table', NULL),
+(10, '2015_02_24_000000_create_posts_table', NULL),
+(11, '2015_02_24_000000_create_users_discussions_table', NULL),
+(12, '2015_02_24_000000_create_users_groups_table', NULL),
+(13, '2015_02_24_000000_create_users_table', NULL),
+(14, '2015_09_15_000000_create_auth_tokens_table', NULL),
+(15, '2015_09_20_224327_add_hide_to_discussions', NULL),
+(16, '2015_09_22_030432_rename_notification_read_time', NULL),
+(17, '2015_10_07_130531_rename_config_to_settings', NULL),
+(18, '2015_10_24_194000_add_ip_address_to_posts', NULL),
+(19, '2015_12_05_042721_change_access_tokens_columns', NULL),
+(20, '2015_12_17_194247_change_settings_value_column_to_text', NULL),
+(21, '2016_02_04_095452_add_slug_to_discussions', NULL),
+(22, '2017_04_07_114138_add_is_private_to_discussions', NULL),
+(23, '2017_04_07_114138_add_is_private_to_posts', NULL),
+(24, '2018_01_11_093900_change_access_tokens_columns', NULL),
+(25, '2018_01_11_094000_change_access_tokens_add_foreign_keys', NULL),
+(26, '2018_01_11_095000_change_api_keys_columns', NULL),
+(27, '2018_01_11_101800_rename_auth_tokens_to_registration_tokens', NULL),
+(28, '2018_01_11_102000_change_registration_tokens_rename_id_to_token', NULL),
+(29, '2018_01_11_102100_change_registration_tokens_created_at_to_datetime', NULL),
+(30, '2018_01_11_120604_change_posts_table_to_innodb', NULL),
+(31, '2018_01_11_155200_change_discussions_rename_columns', NULL),
+(32, '2018_01_11_155300_change_discussions_add_foreign_keys', NULL),
+(33, '2018_01_15_071700_rename_users_discussions_to_discussion_user', NULL),
+(34, '2018_01_15_071800_change_discussion_user_rename_columns', NULL),
+(35, '2018_01_15_071900_change_discussion_user_add_foreign_keys', NULL),
+(36, '2018_01_15_072600_change_email_tokens_rename_id_to_token', NULL),
+(37, '2018_01_15_072700_change_email_tokens_add_foreign_keys', NULL),
+(38, '2018_01_15_072800_change_email_tokens_created_at_to_datetime', NULL),
+(39, '2018_01_18_130400_rename_permissions_to_group_permission', NULL),
+(40, '2018_01_18_130500_change_group_permission_add_foreign_keys', NULL),
+(41, '2018_01_18_130600_rename_users_groups_to_group_user', NULL),
+(42, '2018_01_18_130700_change_group_user_add_foreign_keys', NULL),
+(43, '2018_01_18_133000_change_notifications_columns', NULL),
+(44, '2018_01_18_133100_change_notifications_add_foreign_keys', NULL),
+(45, '2018_01_18_134400_change_password_tokens_rename_id_to_token', NULL),
+(46, '2018_01_18_134500_change_password_tokens_add_foreign_keys', NULL),
+(47, '2018_01_18_134600_change_password_tokens_created_at_to_datetime', NULL),
+(48, '2018_01_18_135000_change_posts_rename_columns', NULL),
+(49, '2018_01_18_135100_change_posts_add_foreign_keys', NULL),
+(50, '2018_01_30_112238_add_fulltext_index_to_discussions_title', NULL),
+(51, '2018_01_30_220100_create_post_user_table', NULL),
+(52, '2018_01_30_222900_change_users_rename_columns', NULL),
+(55, '2018_09_15_041340_add_users_indicies', NULL),
+(56, '2018_09_15_041828_add_discussions_indicies', NULL),
+(57, '2018_09_15_043337_add_notifications_indices', NULL),
+(58, '2018_09_15_043621_add_posts_indices', NULL),
+(59, '2018_09_22_004100_change_registration_tokens_columns', NULL),
+(60, '2018_09_22_004200_create_login_providers_table', NULL),
+(61, '2018_10_08_144700_add_shim_prefix_to_group_icons', NULL),
+(62, '2019_10_12_195349_change_posts_add_discussion_foreign_key', NULL),
+(63, '2020_03_19_134512_change_discussions_default_comment_count', NULL),
+(64, '2020_04_21_130500_change_permission_groups_add_is_hidden', NULL),
+(65, '2021_03_02_040000_change_access_tokens_add_type', NULL),
+(66, '2021_03_02_040500_change_access_tokens_add_id', NULL),
+(67, '2021_03_02_041000_change_access_tokens_add_title_ip_agent', NULL),
+(68, '2021_04_18_040500_change_migrations_add_id_primary_key', NULL),
+(69, '2021_04_18_145100_change_posts_content_column_to_mediumtext', NULL),
+(70, '2018_07_21_000000_seed_default_groups', NULL),
+(71, '2018_07_21_000100_seed_default_group_permissions', NULL),
+(72, '2021_05_10_000000_rename_permissions', NULL),
+(73, '2022_05_20_000000_add_timestamps_to_groups_table', NULL),
+(74, '2022_05_20_000001_add_created_at_to_group_user_table', NULL),
+(75, '2022_05_20_000002_add_created_at_to_group_permission_table', NULL),
+(76, '2022_07_14_000000_add_type_index_to_posts', NULL),
+(77, '2022_07_14_000001_add_type_created_at_composite_index_to_posts', NULL),
+(78, '2022_08_06_000000_change_access_tokens_last_activity_at_to_nullable', NULL),
+(79, '2015_09_02_000000_add_flags_read_time_to_users_table', 'flarum-flags'),
+(80, '2015_09_02_000000_create_flags_table', 'flarum-flags'),
+(81, '2017_07_22_000000_add_default_permissions', 'flarum-flags'),
+(82, '2018_06_27_101500_change_flags_rename_time_to_created_at', 'flarum-flags'),
+(83, '2018_06_27_101600_change_flags_add_foreign_keys', 'flarum-flags'),
+(84, '2018_06_27_105100_change_users_rename_flags_read_time_to_read_flags_at', 'flarum-flags'),
+(85, '2018_09_15_043621_add_flags_indices', 'flarum-flags'),
+(86, '2019_10_22_000000_change_reason_text_col_type', 'flarum-flags'),
+(87, '2015_09_21_011527_add_is_approved_to_discussions', 'flarum-approval'),
+(88, '2015_09_21_011706_add_is_approved_to_posts', 'flarum-approval'),
+(89, '2017_07_22_000000_add_default_permissions', 'flarum-approval'),
+(90, '2015_02_24_000000_create_discussions_tags_table', 'flarum-tags'),
+(91, '2015_02_24_000000_create_tags_table', 'flarum-tags'),
+(92, '2015_02_24_000000_create_users_tags_table', 'flarum-tags'),
+(93, '2015_02_24_000000_set_default_settings', 'flarum-tags'),
+(94, '2015_10_19_061223_make_slug_unique', 'flarum-tags'),
+(95, '2017_07_22_000000_add_default_permissions', 'flarum-tags'),
+(96, '2018_06_27_085200_change_tags_columns', 'flarum-tags'),
+(97, '2018_06_27_085300_change_tags_add_foreign_keys', 'flarum-tags'),
+(98, '2018_06_27_090400_rename_users_tags_to_tag_user', 'flarum-tags'),
+(99, '2018_06_27_100100_change_tag_user_rename_read_time_to_marked_as_read_at', 'flarum-tags'),
+(100, '2018_06_27_100200_change_tag_user_add_foreign_keys', 'flarum-tags'),
+(101, '2018_06_27_103000_rename_discussions_tags_to_discussion_tag', 'flarum-tags'),
+(102, '2018_06_27_103100_add_discussion_tag_foreign_keys', 'flarum-tags'),
+(103, '2019_04_21_000000_add_icon_to_tags_table', 'flarum-tags'),
+(104, '2022_05_20_000003_add_timestamps_to_tags_table', 'flarum-tags'),
+(105, '2022_05_20_000004_add_created_at_to_discussion_tag_table', 'flarum-tags'),
+(106, '2023_03_01_000000_create_post_mentions_tag_table', 'flarum-tags'),
+(107, '2015_05_11_000000_add_suspended_until_to_users_table', 'flarum-suspend'),
+(108, '2015_09_14_000000_rename_suspended_until_column', 'flarum-suspend'),
+(109, '2017_07_22_000000_add_default_permissions', 'flarum-suspend'),
+(110, '2018_06_27_111400_change_users_rename_suspend_until_to_suspended_until', 'flarum-suspend'),
+(111, '2021_10_27_000000_add_suspend_reason_and_message', 'flarum-suspend'),
+(112, '2015_05_11_000000_add_subscription_to_users_discussions_table', 'flarum-subscriptions'),
+(113, '2015_02_24_000000_add_sticky_to_discussions', 'flarum-sticky'),
+(114, '2017_07_22_000000_add_default_permissions', 'flarum-sticky'),
+(115, '2018_09_15_043621_add_discussions_indices', 'flarum-sticky'),
+(116, '2021_01_13_000000_add_discussion_last_posted_at_indices', 'flarum-sticky'),
+(117, '2015_05_11_000000_create_mentions_posts_table', 'flarum-mentions'),
+(118, '2015_05_11_000000_create_mentions_users_table', 'flarum-mentions'),
+(119, '2018_06_27_102000_rename_mentions_posts_to_post_mentions_post', 'flarum-mentions'),
+(120, '2018_06_27_102100_rename_mentions_users_to_post_mentions_user', 'flarum-mentions'),
+(121, '2018_06_27_102200_change_post_mentions_post_rename_mentions_id_to_mentions_post_id', 'flarum-mentions'),
+(122, '2018_06_27_102300_change_post_mentions_post_add_foreign_keys', 'flarum-mentions'),
+(123, '2018_06_27_102400_change_post_mentions_user_rename_mentions_id_to_mentions_user_id', 'flarum-mentions'),
+(124, '2018_06_27_102500_change_post_mentions_user_add_foreign_keys', 'flarum-mentions'),
+(125, '2021_04_19_000000_set_default_settings', 'flarum-mentions'),
+(126, '2022_05_20_000005_add_created_at_to_post_mentions_post_table', 'flarum-mentions'),
+(127, '2022_05_20_000006_add_created_at_to_post_mentions_user_table', 'flarum-mentions'),
+(128, '2022_10_21_000000_create_post_mentions_group_table', 'flarum-mentions'),
+(129, '2021_03_25_000000_default_settings', 'flarum-markdown'),
+(130, '2015_02_24_000000_add_locked_to_discussions', 'flarum-lock'),
+(131, '2017_07_22_000000_add_default_permissions', 'flarum-lock'),
+(132, '2018_09_15_043621_add_discussions_indices', 'flarum-lock'),
+(133, '2015_05_11_000000_create_posts_likes_table', 'flarum-likes'),
+(134, '2015_09_04_000000_add_default_like_permissions', 'flarum-likes'),
+(135, '2018_06_27_100600_rename_posts_likes_to_post_likes', 'flarum-likes'),
+(136, '2018_06_27_100700_change_post_likes_add_foreign_keys', 'flarum-likes'),
+(137, '2021_05_10_094200_add_created_at_to_post_likes_table', 'flarum-likes'),
+(138, '2018_09_29_060444_replace_emoji_shorcuts_with_unicode', 'flarum-emoji'),
+(139, '2022_02_22_000000_create_package_manager_tasks_table', 'flarum-extension-manager'),
+(140, '2023_12_09_000000_add_guessed_cause_column_to_package_manager_tasks_table', 'flarum-extension-manager'),
+(141, '2024_01_10_000000_rename_to_extension_manager', 'flarum-extension-manager'),
+(142, '2020_11_23_000000_add_nickname_column', 'flarum-nicknames'),
+(143, '2020_12_02_000001_set_default_permissions', 'flarum-nicknames'),
+(144, '2021_11_16_000000_nickname_column_nullable', 'flarum-nicknames'),
+(145, '2019_06_11_000000_add_subscription_to_users_tags_table', 'fof-follow-tags'),
+(146, '2019_06_28_000000_add_hide_subscription_option', 'fof-follow-tags'),
+(147, '2021_01_22_000000_add_indicies', 'fof-follow-tags'),
+(148, '2022_05_20_000000_add_timestamps_to_tag_user_table', 'fof-follow-tags'),
+(149, '0000_00_00_000000_create_user_followers_table', 'ianm-follow-users'),
+(150, '0000_00_00_000001_set_default_permissions', 'ianm-follow-users'),
+(151, '2021_07_12_000000_add_subscription_type_to_user_followers_table', 'ianm-follow-users'),
+(152, '2021_07_14_000000_drop_composite_primary_key', 'ianm-follow-users'),
+(153, '2021_07_14_000001_add_primary_key', 'ianm-follow-users'),
+(154, '2021_07_14_000002_migrate_old_subscriptions', 'ianm-follow-users'),
+(155, '2017_04_07_000000_create_pushedx_messages', 'xelson-chat'),
+(156, '2020_01_23_000000_fix_message_length', 'xelson-chat'),
+(157, '2020_01_29_000000_add_edited_removed_msg_flags', 'xelson-chat'),
+(158, '2020_01_31_000000_change_timestamp_to_datetime', 'xelson-chat'),
+(159, '2020_09_28_000000_create_chat_tables', 'xelson-chat'),
+(160, '2020_10_28_191115_edit_chat_user', 'xelson-chat'),
+(161, '2020_12_05_000000_add_default_settings', 'xelson-chat'),
+(162, '2020_12_05_000001_add_default_permissions', 'xelson-chat'),
+(163, '2024_11_18_000000_increase_email_field_length', NULL),
+(164, '2024_11_22_000000_increase_email_field_length_in_email_tokens', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_neonchat_chats`
+--
+
+CREATE TABLE `cyo_neonchat_chats` (
+  `id` int UNSIGNED NOT NULL,
+  `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'PM',
+  `color` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `icon` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` tinyint NOT NULL DEFAULT '0',
+  `creator_id` int UNSIGNED NOT NULL DEFAULT '0',
+  `created_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cyo_neonchat_chats`
+--
+
+INSERT INTO `cyo_neonchat_chats` (`id`, `title`, `color`, `icon`, `type`, `creator_id`, `created_at`) VALUES
+(1, 'Trò Chuyện Linh Tinh™', '#319527', 'fas fa-frog', 1, 0, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_neonchat_chat_user`
+--
+
+CREATE TABLE `cyo_neonchat_chat_user` (
+  `chat_id` int UNSIGNED NOT NULL,
+  `user_id` int UNSIGNED NOT NULL,
+  `role` tinyint NOT NULL DEFAULT '0',
+  `removed_by` int UNSIGNED DEFAULT NULL,
+  `readed_at` datetime DEFAULT NULL,
+  `removed_at` datetime DEFAULT NULL,
+  `joined_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cyo_neonchat_chat_user`
+--
+
+INSERT INTO `cyo_neonchat_chat_user` (`chat_id`, `user_id`, `role`, `removed_by`, `readed_at`, `removed_at`, `joined_at`) VALUES
+(1, 1, 0, NULL, '2025-06-25 13:50:09', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_neonchat_messages`
+--
+
+CREATE TABLE `cyo_neonchat_messages` (
+  `id` int UNSIGNED NOT NULL,
+  `message` varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` int UNSIGNED DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `edited_at` datetime DEFAULT NULL,
+  `deleted_by` int UNSIGNED DEFAULT NULL,
+  `chat_id` int UNSIGNED NOT NULL DEFAULT '1',
+  `type` tinyint NOT NULL DEFAULT '0',
+  `is_readed` tinyint(1) NOT NULL DEFAULT '0',
+  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cyo_neonchat_messages`
+--
+
+INSERT INTO `cyo_neonchat_messages` (`id`, `message`, `user_id`, `created_at`, `edited_at`, `deleted_by`, `chat_id`, `type`, `is_readed`, `ip_address`) VALUES
+(1, 'hello xin chào ae', 1, '2025-06-25 13:42:48', NULL, NULL, 1, 0, 0, '127.0.0.1'),
+(2, '{\"column\":\"color\",\"old\":\"#FF94C1\",\"new\":\"#319527\",\"id\":\"chatEdited\"}', 1, '2025-06-25 13:47:01', NULL, NULL, 1, 1, 0, '127.0.0.1'),
+(3, '{\"column\":\"icon\",\"old\":\"fas fa-cloud\",\"new\":\"fas fa-frog\",\"id\":\"chatEdited\"}', 1, '2025-06-25 13:48:32', NULL, NULL, 1, 1, 0, '127.0.0.1'),
+(4, '{\"column\":\"title\",\"old\":\"#main\",\"new\":\"Tr\\u00f2 Chuy\\u1ec7n Linh Tinh\\u2122\",\"id\":\"chatEdited\"}', 1, '2025-06-25 13:49:22', NULL, NULL, 1, 1, 0, '127.0.0.1'),
+(5, '{\"column\":\"title\",\"old\":\"Tr\\u00f2 Chuy\\u1ec7n Linh Tinh\\u2122\",\"new\":\"#Tr\\u00f2 Chuy\\u1ec7n Linh Tinh\\u2122\",\"id\":\"chatEdited\"}', 1, '2025-06-25 13:50:00', NULL, NULL, 1, 1, 0, '127.0.0.1'),
+(6, '{\"column\":\"title\",\"old\":\"#Tr\\u00f2 Chuy\\u1ec7n Linh Tinh\\u2122\",\"new\":\"Tr\\u00f2 Chuy\\u1ec7n Linh Tinh\\u2122\",\"id\":\"chatEdited\"}', 1, '2025-06-25 13:50:09', NULL, NULL, 1, 1, 0, '127.0.0.1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_notifications`
+--
+
+CREATE TABLE `cyo_notifications` (
+  `id` int UNSIGNED NOT NULL,
+  `user_id` int UNSIGNED NOT NULL,
+  `from_user_id` int UNSIGNED DEFAULT NULL,
+  `type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subject_id` int UNSIGNED DEFAULT NULL,
+  `data` blob,
+  `created_at` datetime NOT NULL,
+  `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `read_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_password_tokens`
+--
+
+CREATE TABLE `cyo_password_tokens` (
+  `token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` int UNSIGNED NOT NULL,
+  `created_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_posts`
+--
+
+CREATE TABLE `cyo_posts` (
+  `id` int UNSIGNED NOT NULL,
+  `discussion_id` int UNSIGNED NOT NULL,
+  `number` int UNSIGNED DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `user_id` int UNSIGNED DEFAULT NULL,
+  `type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci COMMENT ' ',
+  `edited_at` datetime DEFAULT NULL,
+  `edited_user_id` int UNSIGNED DEFAULT NULL,
+  `hidden_at` datetime DEFAULT NULL,
+  `hidden_user_id` int UNSIGNED DEFAULT NULL,
+  `ip_address` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_private` tinyint(1) NOT NULL DEFAULT '0',
+  `is_approved` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cyo_posts`
+--
+
+INSERT INTO `cyo_posts` (`id`, `discussion_id`, `number`, `created_at`, `user_id`, `type`, `content`, `edited_at`, `edited_user_id`, `hidden_at`, `hidden_user_id`, `ip_address`, `is_private`, `is_approved`) VALUES
+(1, 1, 1, '2025-06-25 13:01:18', 1, 'comment', '<t><p>Đây là bài viết đầu tiên của CBH Youth Online trên nền tảng Flarum</p></t>', NULL, NULL, NULL, NULL, '127.0.0.1', 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_post_likes`
+--
+
+CREATE TABLE `cyo_post_likes` (
+  `post_id` int UNSIGNED NOT NULL,
+  `user_id` int UNSIGNED NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cyo_post_likes`
+--
+
+INSERT INTO `cyo_post_likes` (`post_id`, `user_id`, `created_at`) VALUES
+(1, 1, '2025-06-25 14:45:12');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_post_mentions_group`
+--
+
+CREATE TABLE `cyo_post_mentions_group` (
+  `post_id` int UNSIGNED NOT NULL,
+  `mentions_group_id` int UNSIGNED NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_post_mentions_post`
+--
+
+CREATE TABLE `cyo_post_mentions_post` (
+  `post_id` int UNSIGNED NOT NULL,
+  `mentions_post_id` int UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_post_mentions_tag`
+--
+
+CREATE TABLE `cyo_post_mentions_tag` (
+  `post_id` int UNSIGNED NOT NULL,
+  `mentions_tag_id` int UNSIGNED NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_post_mentions_user`
+--
+
+CREATE TABLE `cyo_post_mentions_user` (
+  `post_id` int UNSIGNED NOT NULL,
+  `mentions_user_id` int UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_post_user`
+--
+
+CREATE TABLE `cyo_post_user` (
+  `post_id` int UNSIGNED NOT NULL,
+  `user_id` int UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_registration_tokens`
+--
+
+CREATE TABLE `cyo_registration_tokens` (
+  `token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `created_at` datetime DEFAULT NULL,
+  `provider` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `identifier` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_attributes` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_settings`
+--
+
+CREATE TABLE `cyo_settings` (
+  `key` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cyo_settings`
+--
+
+INSERT INTO `cyo_settings` (`key`, `value`) VALUES
+('allow_hide_own_posts', 'reply'),
+('allow_post_editing', 'reply'),
+('allow_renaming', '10'),
+('allow_sign_up', '1'),
+('custom_header', '<style>\n.ChatViewport .UserMention:hover {\n    color: #319527 !important;\n}\n</style>'),
+('custom_less', '.ChatHeader h2 {\n  max-width: 300px !important;\n}\n\n.ChatList .header {\n    background-color: #319527 !important;\n}\n\n.ChatList {\n    background-color: #e4eee3 !important;\n}\n\n.ChatList .panel-preview.active {\n    background-color: #ffffff !important;\n    box-shadow: 0 0 0 3px #256c1e !important;\n}\n\n.ChatModal .Modal-body .InputTitle .ButtonsPadding {\n    height: 50px !important;\n}\n\n.ChatList .panel-add:hover {\n    box-shadow: 0 0 0 3px #319527 !important;\n}'),
+('default_locale', 'vi'),
+('default_route', '/all'),
+('display_name_driver', 'nickname'),
+('extensions_enabled', '[\"flarum-flags\",\"flarum-tags\",\"flarum-approval\",\"flarum-mentions\",\"flarum-subscriptions\",\"flarum-markdown\",\"fof-follow-tags\",\"xelson-chat\",\"ianm-follow-users\",\"flarum-suspend\",\"flarum-sticky\",\"flarum-statistics\",\"flarum-pusher\",\"flarum-nicknames\",\"flarum-lock\",\"flarum-likes\",\"flarum-lang-vietnamese\",\"flarum-extension-manager\",\"flarum-emoji\",\"flarum-bbcode\"]'),
+('favicon_path', 'favicon-zos3qlzf.png'),
+('flarum-markdown.mdarea', '1'),
+('flarum-mentions.allow_username_format', '1'),
+('flarum-pusher.app_cluster', 'ap1'),
+('flarum-pusher.app_id', '1998261'),
+('flarum-pusher.app_key', '149944d44821716b7cc7'),
+('flarum-pusher.app_secret', '9cbc0a659e8394f9d4bb'),
+('flarum-tags.max_primary_tags', '1'),
+('flarum-tags.max_secondary_tags', '3'),
+('flarum-tags.min_primary_tags', '1'),
+('flarum-tags.min_secondary_tags', '0'),
+('fof-custom-footer.height', ''),
+('fof-custom-footer.js', ''),
+('fof-custom-footer.text', 'LOL'),
+('forum_description', 'Nơi học sinh – cựu học sinh cùng nhau trao đổi kiến thức, chia sẻ tài liệu, kết nối bạn bè và lưu giữ kỷ niệm dưới mái trường Chuyên'),
+('forum_title', 'Diễn đàn học sinh Chuyên Biên Hòa'),
+('ianm-follow-users.button-on-profile', '1'),
+('logo_path', 'logo-vucujdjf.png'),
+('mail_driver', 'mail'),
+('mail_encryption', ''),
+('mail_from', 'noreply@chuyenbienhoa.com'),
+('mail_host', ''),
+('mail_password', ''),
+('mail_port', ''),
+('mail_username', ''),
+('show_language_selector', ''),
+('slug_driver_Flarum\\Discussion\\Discussion', ''),
+('slug_driver_Flarum\\User\\User', 'default'),
+('theme_colored_header', '0'),
+('theme_dark_mode', '0'),
+('theme_primary_color', '#319527'),
+('theme_secondary_color', '#e4eee3'),
+('version', '1.8.10'),
+('welcome_message', 'Nơi học sinh – cựu học sinh cùng nhau trao đổi kiến thức, chia sẻ tài liệu, kết nối bạn bè và lưu giữ kỷ niệm dưới mái trường Chuyên. Tham gia thảo luận, đóng góp nội dung và cùng xây dựng một cộng đồng Chuyên Biên Hòa năng động, tích cực và gắn kết!'),
+('welcome_title', 'Diễn đàn học sinh Trường THPT Chuyên Biên Hòa - Hà Nam'),
+('xelson-chat.settings.charlimit', '512'),
+('xelson-chat.settings.floodgate.number', '3'),
+('xelson-chat.settings.floodgate.time', '1 hour');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_tags`
+--
+
+CREATE TABLE `cyo_tags` (
+  `id` int UNSIGNED NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `color` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `background_path` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `background_mode` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `position` int DEFAULT NULL,
+  `parent_id` int UNSIGNED DEFAULT NULL,
+  `default_sort` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_restricted` tinyint(1) NOT NULL DEFAULT '0',
+  `is_hidden` tinyint(1) NOT NULL DEFAULT '0',
+  `discussion_count` int UNSIGNED NOT NULL DEFAULT '0',
+  `last_posted_at` datetime DEFAULT NULL,
+  `last_posted_discussion_id` int UNSIGNED DEFAULT NULL,
+  `last_posted_user_id` int UNSIGNED DEFAULT NULL,
+  `icon` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cyo_tags`
+--
+
+INSERT INTO `cyo_tags` (`id`, `name`, `slug`, `description`, `color`, `background_path`, `background_mode`, `position`, `parent_id`, `default_sort`, `is_restricted`, `is_hidden`, `discussion_count`, `last_posted_at`, `last_posted_discussion_id`, `last_posted_user_id`, `icon`, `created_at`, `updated_at`) VALUES
+(1, 'General', 'general', NULL, '#888', NULL, NULL, 0, NULL, NULL, 0, 0, 1, '2025-06-25 13:01:18', 1, 1, NULL, NULL, '2025-06-25 13:01:18');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_tag_user`
+--
+
+CREATE TABLE `cyo_tag_user` (
+  `user_id` int UNSIGNED NOT NULL,
+  `tag_id` int UNSIGNED NOT NULL,
+  `marked_as_read_at` datetime DEFAULT NULL,
+  `is_hidden` tinyint(1) NOT NULL DEFAULT '0',
+  `subscription` enum('follow','lurk','ignore','hide') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_users`
+--
+
+CREATE TABLE `cyo_users` (
+  `id` int UNSIGNED NOT NULL,
+  `username` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nickname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(254) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `is_email_confirmed` tinyint(1) NOT NULL DEFAULT '0',
+  `password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `avatar_url` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `preferences` blob,
+  `joined_at` datetime DEFAULT NULL,
+  `last_seen_at` datetime DEFAULT NULL,
+  `marked_all_as_read_at` datetime DEFAULT NULL,
+  `read_notifications_at` datetime DEFAULT NULL,
+  `discussion_count` int UNSIGNED NOT NULL DEFAULT '0',
+  `comment_count` int UNSIGNED NOT NULL DEFAULT '0',
+  `read_flags_at` datetime DEFAULT NULL,
+  `suspended_until` datetime DEFAULT NULL,
+  `suspend_reason` text COLLATE utf8mb4_unicode_ci,
+  `suspend_message` text COLLATE utf8mb4_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cyo_users`
+--
+
+INSERT INTO `cyo_users` (`id`, `username`, `nickname`, `email`, `is_email_confirmed`, `password`, `avatar_url`, `preferences`, `joined_at`, `last_seen_at`, `marked_all_as_read_at`, `read_notifications_at`, `discussion_count`, `comment_count`, `read_flags_at`, `suspended_until`, `suspend_reason`, `suspend_message`) VALUES
+(1, 'cbhyouthonline', 'CBH Youth Online', 'cbhyouthonline@gmail.com', 1, '$2y$10$2ZTXAm188oKeMHhhgFeZFu5xN6lYfcR6L0p/vdTAMWJPIrdzSdGPO', 'Zmx5M5QYjIeK19my.png', 0x7b22666f6c6c6f7741667465725265706c79223a66616c73652c22666c6172756d2d737562736372697074696f6e732e6e6f746966795f666f725f616c6c5f706f737473223a66616c73652c226e6f746966795f64697363757373696f6e52656e616d65645f616c657274223a747275652c226e6f746966795f7573657253757370656e6465645f616c657274223a747275652c226e6f746966795f7573657253757370656e6465645f656d61696c223a747275652c226e6f746966795f75736572556e73757370656e6465645f616c657274223a747275652c226e6f746966795f75736572556e73757370656e6465645f656d61696c223a747275652c226e6f746966795f6e6577506f73745f616c657274223a747275652c226e6f746966795f6e6577506f73745f656d61696c223a747275652c226e6f746966795f706f73744d656e74696f6e65645f616c657274223a747275652c226e6f746966795f706f73744d656e74696f6e65645f656d61696c223a66616c73652c226e6f746966795f757365724d656e74696f6e65645f616c657274223a747275652c226e6f746966795f757365724d656e74696f6e65645f656d61696c223a66616c73652c226e6f746966795f67726f75704d656e74696f6e65645f616c657274223a747275652c226e6f746966795f67726f75704d656e74696f6e65645f656d61696c223a66616c73652c226e6f746966795f64697363757373696f6e4c6f636b65645f616c657274223a747275652c226e6f746966795f706f73744c696b65645f616c657274223a747275652c22646973636c6f73654f6e6c696e65223a747275652c22696e64657850726f66696c65223a747275652c226c6f63616c65223a227669227d, '2025-06-25 12:34:35', '2025-06-25 15:00:23', '2025-06-25 14:44:46', '2025-06-25 13:09:02', 1, 1, '2025-06-25 13:09:03', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cyo_user_followers`
+--
+
+CREATE TABLE `cyo_user_followers` (
+  `user_id` int UNSIGNED NOT NULL,
+  `followed_user_id` int UNSIGNED NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `subscription` enum('follow','lurk') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` int UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `cyo_access_tokens`
+--
+ALTER TABLE `cyo_access_tokens`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `cyo_access_tokens_token_unique` (`token`),
+  ADD KEY `cyo_access_tokens_user_id_foreign` (`user_id`),
+  ADD KEY `cyo_access_tokens_type_index` (`type`);
+
+--
+-- Indexes for table `cyo_api_keys`
+--
+ALTER TABLE `cyo_api_keys`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `cyo_api_keys_key_unique` (`key`),
+  ADD KEY `cyo_api_keys_user_id_foreign` (`user_id`);
+
+--
+-- Indexes for table `cyo_discussions`
+--
+ALTER TABLE `cyo_discussions`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cyo_discussions_hidden_user_id_foreign` (`hidden_user_id`),
+  ADD KEY `cyo_discussions_first_post_id_foreign` (`first_post_id`),
+  ADD KEY `cyo_discussions_last_post_id_foreign` (`last_post_id`),
+  ADD KEY `cyo_discussions_last_posted_at_index` (`last_posted_at`),
+  ADD KEY `cyo_discussions_last_posted_user_id_index` (`last_posted_user_id`),
+  ADD KEY `cyo_discussions_created_at_index` (`created_at`),
+  ADD KEY `cyo_discussions_user_id_index` (`user_id`),
+  ADD KEY `cyo_discussions_comment_count_index` (`comment_count`),
+  ADD KEY `cyo_discussions_participant_count_index` (`participant_count`),
+  ADD KEY `cyo_discussions_hidden_at_index` (`hidden_at`),
+  ADD KEY `cyo_discussions_is_sticky_created_at_index` (`is_sticky`,`created_at`),
+  ADD KEY `cyo_discussions_is_sticky_last_posted_at_index` (`is_sticky`,`last_posted_at`),
+  ADD KEY `cyo_discussions_is_locked_index` (`is_locked`);
+ALTER TABLE `cyo_discussions` ADD FULLTEXT KEY `title` (`title`);
+
+--
+-- Indexes for table `cyo_discussion_tag`
+--
+ALTER TABLE `cyo_discussion_tag`
+  ADD PRIMARY KEY (`discussion_id`,`tag_id`),
+  ADD KEY `cyo_discussion_tag_tag_id_foreign` (`tag_id`);
+
+--
+-- Indexes for table `cyo_discussion_user`
+--
+ALTER TABLE `cyo_discussion_user`
+  ADD PRIMARY KEY (`user_id`,`discussion_id`),
+  ADD KEY `cyo_discussion_user_discussion_id_foreign` (`discussion_id`);
+
+--
+-- Indexes for table `cyo_email_tokens`
+--
+ALTER TABLE `cyo_email_tokens`
+  ADD PRIMARY KEY (`token`),
+  ADD KEY `cyo_email_tokens_user_id_foreign` (`user_id`);
+
+--
+-- Indexes for table `cyo_extension_manager_tasks`
+--
+ALTER TABLE `cyo_extension_manager_tasks`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `cyo_flags`
+--
+ALTER TABLE `cyo_flags`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cyo_flags_post_id_foreign` (`post_id`),
+  ADD KEY `cyo_flags_user_id_foreign` (`user_id`),
+  ADD KEY `cyo_flags_created_at_index` (`created_at`);
+
+--
+-- Indexes for table `cyo_groups`
+--
+ALTER TABLE `cyo_groups`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `cyo_group_permission`
+--
+ALTER TABLE `cyo_group_permission`
+  ADD PRIMARY KEY (`group_id`,`permission`);
+
+--
+-- Indexes for table `cyo_group_user`
+--
+ALTER TABLE `cyo_group_user`
+  ADD PRIMARY KEY (`user_id`,`group_id`),
+  ADD KEY `cyo_group_user_group_id_foreign` (`group_id`);
+
+--
+-- Indexes for table `cyo_login_providers`
+--
+ALTER TABLE `cyo_login_providers`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `cyo_login_providers_provider_identifier_unique` (`provider`,`identifier`),
+  ADD KEY `cyo_login_providers_user_id_foreign` (`user_id`);
+
+--
+-- Indexes for table `cyo_migrations`
+--
+ALTER TABLE `cyo_migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `cyo_neonchat_chats`
+--
+ALTER TABLE `cyo_neonchat_chats`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `cyo_neonchat_chat_user`
+--
+ALTER TABLE `cyo_neonchat_chat_user`
+  ADD PRIMARY KEY (`chat_id`,`user_id`),
+  ADD KEY `cyo_neonchat_chat_user_user_id_foreign` (`user_id`),
+  ADD KEY `cyo_neonchat_chat_user_removed_by_foreign` (`removed_by`);
+
+--
+-- Indexes for table `cyo_neonchat_messages`
+--
+ALTER TABLE `cyo_neonchat_messages`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cyo_neonchat_messages_chat_id_foreign` (`chat_id`),
+  ADD KEY `cyo_neonchat_messages_user_id_foreign` (`user_id`),
+  ADD KEY `cyo_neonchat_messages_deleted_by_foreign` (`deleted_by`);
+
+--
+-- Indexes for table `cyo_notifications`
+--
+ALTER TABLE `cyo_notifications`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cyo_notifications_from_user_id_foreign` (`from_user_id`),
+  ADD KEY `cyo_notifications_user_id_index` (`user_id`);
+
+--
+-- Indexes for table `cyo_password_tokens`
+--
+ALTER TABLE `cyo_password_tokens`
+  ADD PRIMARY KEY (`token`),
+  ADD KEY `cyo_password_tokens_user_id_foreign` (`user_id`);
+
+--
+-- Indexes for table `cyo_posts`
+--
+ALTER TABLE `cyo_posts`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `cyo_posts_discussion_id_number_unique` (`discussion_id`,`number`),
+  ADD KEY `cyo_posts_edited_user_id_foreign` (`edited_user_id`),
+  ADD KEY `cyo_posts_hidden_user_id_foreign` (`hidden_user_id`),
+  ADD KEY `cyo_posts_discussion_id_number_index` (`discussion_id`,`number`),
+  ADD KEY `cyo_posts_discussion_id_created_at_index` (`discussion_id`,`created_at`),
+  ADD KEY `cyo_posts_user_id_created_at_index` (`user_id`,`created_at`),
+  ADD KEY `cyo_posts_type_index` (`type`),
+  ADD KEY `cyo_posts_type_created_at_index` (`type`,`created_at`);
+ALTER TABLE `cyo_posts` ADD FULLTEXT KEY `content` (`content`);
+
+--
+-- Indexes for table `cyo_post_likes`
+--
+ALTER TABLE `cyo_post_likes`
+  ADD PRIMARY KEY (`post_id`,`user_id`),
+  ADD KEY `cyo_post_likes_user_id_foreign` (`user_id`);
+
+--
+-- Indexes for table `cyo_post_mentions_group`
+--
+ALTER TABLE `cyo_post_mentions_group`
+  ADD PRIMARY KEY (`post_id`,`mentions_group_id`),
+  ADD KEY `cyo_post_mentions_group_mentions_group_id_foreign` (`mentions_group_id`);
+
+--
+-- Indexes for table `cyo_post_mentions_post`
+--
+ALTER TABLE `cyo_post_mentions_post`
+  ADD PRIMARY KEY (`post_id`,`mentions_post_id`),
+  ADD KEY `cyo_post_mentions_post_mentions_post_id_foreign` (`mentions_post_id`);
+
+--
+-- Indexes for table `cyo_post_mentions_tag`
+--
+ALTER TABLE `cyo_post_mentions_tag`
+  ADD PRIMARY KEY (`post_id`,`mentions_tag_id`),
+  ADD KEY `cyo_post_mentions_tag_mentions_tag_id_foreign` (`mentions_tag_id`);
+
+--
+-- Indexes for table `cyo_post_mentions_user`
+--
+ALTER TABLE `cyo_post_mentions_user`
+  ADD PRIMARY KEY (`post_id`,`mentions_user_id`),
+  ADD KEY `cyo_post_mentions_user_mentions_user_id_foreign` (`mentions_user_id`);
+
+--
+-- Indexes for table `cyo_post_user`
+--
+ALTER TABLE `cyo_post_user`
+  ADD PRIMARY KEY (`post_id`,`user_id`),
+  ADD KEY `cyo_post_user_user_id_foreign` (`user_id`);
+
+--
+-- Indexes for table `cyo_registration_tokens`
+--
+ALTER TABLE `cyo_registration_tokens`
+  ADD PRIMARY KEY (`token`);
+
+--
+-- Indexes for table `cyo_settings`
+--
+ALTER TABLE `cyo_settings`
+  ADD PRIMARY KEY (`key`);
+
+--
+-- Indexes for table `cyo_tags`
+--
+ALTER TABLE `cyo_tags`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `cyo_tags_slug_unique` (`slug`),
+  ADD KEY `cyo_tags_parent_id_foreign` (`parent_id`),
+  ADD KEY `cyo_tags_last_posted_user_id_foreign` (`last_posted_user_id`),
+  ADD KEY `cyo_tags_last_posted_discussion_id_foreign` (`last_posted_discussion_id`);
+
+--
+-- Indexes for table `cyo_tag_user`
+--
+ALTER TABLE `cyo_tag_user`
+  ADD PRIMARY KEY (`user_id`,`tag_id`),
+  ADD KEY `cyo_tag_user_tag_id_foreign` (`tag_id`),
+  ADD KEY `cyo_tag_user_user_id_subscription_index` (`user_id`,`subscription`),
+  ADD KEY `cyo_tag_user_subscription_index` (`subscription`);
+
+--
+-- Indexes for table `cyo_users`
+--
+ALTER TABLE `cyo_users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `cyo_users_username_unique` (`username`),
+  ADD UNIQUE KEY `cyo_users_email_unique` (`email`),
+  ADD KEY `cyo_users_joined_at_index` (`joined_at`),
+  ADD KEY `cyo_users_last_seen_at_index` (`last_seen_at`),
+  ADD KEY `cyo_users_discussion_count_index` (`discussion_count`),
+  ADD KEY `cyo_users_comment_count_index` (`comment_count`),
+  ADD KEY `cyo_users_nickname_index` (`nickname`);
+
+--
+-- Indexes for table `cyo_user_followers`
+--
+ALTER TABLE `cyo_user_followers`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cyo_user_followers_followed_user_id_foreign` (`followed_user_id`),
+  ADD KEY `cyo_user_followers_user_id_followed_user_id_index` (`user_id`,`followed_user_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cyo_access_tokens`
+--
+ALTER TABLE `cyo_access_tokens`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `cyo_api_keys`
+--
+ALTER TABLE `cyo_api_keys`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cyo_discussions`
+--
+ALTER TABLE `cyo_discussions`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `cyo_extension_manager_tasks`
+--
+ALTER TABLE `cyo_extension_manager_tasks`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cyo_flags`
+--
+ALTER TABLE `cyo_flags`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cyo_groups`
+--
+ALTER TABLE `cyo_groups`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `cyo_login_providers`
+--
+ALTER TABLE `cyo_login_providers`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cyo_migrations`
+--
+ALTER TABLE `cyo_migrations`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
+
+--
+-- AUTO_INCREMENT for table `cyo_neonchat_chats`
+--
+ALTER TABLE `cyo_neonchat_chats`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `cyo_neonchat_messages`
+--
+ALTER TABLE `cyo_neonchat_messages`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `cyo_notifications`
+--
+ALTER TABLE `cyo_notifications`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cyo_posts`
+--
+ALTER TABLE `cyo_posts`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `cyo_tags`
+--
+ALTER TABLE `cyo_tags`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `cyo_users`
+--
+ALTER TABLE `cyo_users`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `cyo_user_followers`
+--
+ALTER TABLE `cyo_user_followers`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `cyo_access_tokens`
+--
+ALTER TABLE `cyo_access_tokens`
+  ADD CONSTRAINT `cyo_access_tokens_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `cyo_users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_api_keys`
+--
+ALTER TABLE `cyo_api_keys`
+  ADD CONSTRAINT `cyo_api_keys_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `cyo_users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_discussions`
+--
+ALTER TABLE `cyo_discussions`
+  ADD CONSTRAINT `cyo_discussions_first_post_id_foreign` FOREIGN KEY (`first_post_id`) REFERENCES `cyo_posts` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `cyo_discussions_hidden_user_id_foreign` FOREIGN KEY (`hidden_user_id`) REFERENCES `cyo_users` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `cyo_discussions_last_post_id_foreign` FOREIGN KEY (`last_post_id`) REFERENCES `cyo_posts` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `cyo_discussions_last_posted_user_id_foreign` FOREIGN KEY (`last_posted_user_id`) REFERENCES `cyo_users` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `cyo_discussions_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `cyo_users` (`id`) ON DELETE SET NULL;
+
+--
+-- Constraints for table `cyo_discussion_tag`
+--
+ALTER TABLE `cyo_discussion_tag`
+  ADD CONSTRAINT `cyo_discussion_tag_discussion_id_foreign` FOREIGN KEY (`discussion_id`) REFERENCES `cyo_discussions` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cyo_discussion_tag_tag_id_foreign` FOREIGN KEY (`tag_id`) REFERENCES `cyo_tags` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_discussion_user`
+--
+ALTER TABLE `cyo_discussion_user`
+  ADD CONSTRAINT `cyo_discussion_user_discussion_id_foreign` FOREIGN KEY (`discussion_id`) REFERENCES `cyo_discussions` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cyo_discussion_user_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `cyo_users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_email_tokens`
+--
+ALTER TABLE `cyo_email_tokens`
+  ADD CONSTRAINT `cyo_email_tokens_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `cyo_users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_flags`
+--
+ALTER TABLE `cyo_flags`
+  ADD CONSTRAINT `cyo_flags_post_id_foreign` FOREIGN KEY (`post_id`) REFERENCES `cyo_posts` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cyo_flags_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `cyo_users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_group_permission`
+--
+ALTER TABLE `cyo_group_permission`
+  ADD CONSTRAINT `cyo_group_permission_group_id_foreign` FOREIGN KEY (`group_id`) REFERENCES `cyo_groups` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_group_user`
+--
+ALTER TABLE `cyo_group_user`
+  ADD CONSTRAINT `cyo_group_user_group_id_foreign` FOREIGN KEY (`group_id`) REFERENCES `cyo_groups` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cyo_group_user_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `cyo_users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_login_providers`
+--
+ALTER TABLE `cyo_login_providers`
+  ADD CONSTRAINT `cyo_login_providers_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `cyo_users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_neonchat_chat_user`
+--
+ALTER TABLE `cyo_neonchat_chat_user`
+  ADD CONSTRAINT `cyo_neonchat_chat_user_chat_id_foreign` FOREIGN KEY (`chat_id`) REFERENCES `cyo_neonchat_chats` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cyo_neonchat_chat_user_removed_by_foreign` FOREIGN KEY (`removed_by`) REFERENCES `cyo_users` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cyo_neonchat_chat_user_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `cyo_users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_neonchat_messages`
+--
+ALTER TABLE `cyo_neonchat_messages`
+  ADD CONSTRAINT `cyo_neonchat_messages_chat_id_foreign` FOREIGN KEY (`chat_id`) REFERENCES `cyo_neonchat_chats` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cyo_neonchat_messages_deleted_by_foreign` FOREIGN KEY (`deleted_by`) REFERENCES `cyo_users` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cyo_neonchat_messages_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `cyo_users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_notifications`
+--
+ALTER TABLE `cyo_notifications`
+  ADD CONSTRAINT `cyo_notifications_from_user_id_foreign` FOREIGN KEY (`from_user_id`) REFERENCES `cyo_users` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `cyo_notifications_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `cyo_users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_password_tokens`
+--
+ALTER TABLE `cyo_password_tokens`
+  ADD CONSTRAINT `cyo_password_tokens_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `cyo_users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_posts`
+--
+ALTER TABLE `cyo_posts`
+  ADD CONSTRAINT `cyo_posts_discussion_id_foreign` FOREIGN KEY (`discussion_id`) REFERENCES `cyo_discussions` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cyo_posts_edited_user_id_foreign` FOREIGN KEY (`edited_user_id`) REFERENCES `cyo_users` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `cyo_posts_hidden_user_id_foreign` FOREIGN KEY (`hidden_user_id`) REFERENCES `cyo_users` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `cyo_posts_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `cyo_users` (`id`) ON DELETE SET NULL;
+
+--
+-- Constraints for table `cyo_post_likes`
+--
+ALTER TABLE `cyo_post_likes`
+  ADD CONSTRAINT `cyo_post_likes_post_id_foreign` FOREIGN KEY (`post_id`) REFERENCES `cyo_posts` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cyo_post_likes_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `cyo_users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_post_mentions_group`
+--
+ALTER TABLE `cyo_post_mentions_group`
+  ADD CONSTRAINT `cyo_post_mentions_group_mentions_group_id_foreign` FOREIGN KEY (`mentions_group_id`) REFERENCES `cyo_groups` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cyo_post_mentions_group_post_id_foreign` FOREIGN KEY (`post_id`) REFERENCES `cyo_posts` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_post_mentions_post`
+--
+ALTER TABLE `cyo_post_mentions_post`
+  ADD CONSTRAINT `cyo_post_mentions_post_mentions_post_id_foreign` FOREIGN KEY (`mentions_post_id`) REFERENCES `cyo_posts` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cyo_post_mentions_post_post_id_foreign` FOREIGN KEY (`post_id`) REFERENCES `cyo_posts` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_post_mentions_tag`
+--
+ALTER TABLE `cyo_post_mentions_tag`
+  ADD CONSTRAINT `cyo_post_mentions_tag_mentions_tag_id_foreign` FOREIGN KEY (`mentions_tag_id`) REFERENCES `cyo_tags` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cyo_post_mentions_tag_post_id_foreign` FOREIGN KEY (`post_id`) REFERENCES `cyo_posts` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_post_mentions_user`
+--
+ALTER TABLE `cyo_post_mentions_user`
+  ADD CONSTRAINT `cyo_post_mentions_user_mentions_user_id_foreign` FOREIGN KEY (`mentions_user_id`) REFERENCES `cyo_users` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cyo_post_mentions_user_post_id_foreign` FOREIGN KEY (`post_id`) REFERENCES `cyo_posts` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_post_user`
+--
+ALTER TABLE `cyo_post_user`
+  ADD CONSTRAINT `cyo_post_user_post_id_foreign` FOREIGN KEY (`post_id`) REFERENCES `cyo_posts` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cyo_post_user_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `cyo_users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_tags`
+--
+ALTER TABLE `cyo_tags`
+  ADD CONSTRAINT `cyo_tags_last_posted_discussion_id_foreign` FOREIGN KEY (`last_posted_discussion_id`) REFERENCES `cyo_discussions` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `cyo_tags_last_posted_user_id_foreign` FOREIGN KEY (`last_posted_user_id`) REFERENCES `cyo_users` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `cyo_tags_parent_id_foreign` FOREIGN KEY (`parent_id`) REFERENCES `cyo_tags` (`id`) ON DELETE SET NULL;
+
+--
+-- Constraints for table `cyo_tag_user`
+--
+ALTER TABLE `cyo_tag_user`
+  ADD CONSTRAINT `cyo_tag_user_tag_id_foreign` FOREIGN KEY (`tag_id`) REFERENCES `cyo_tags` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cyo_tag_user_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `cyo_users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cyo_user_followers`
+--
+ALTER TABLE `cyo_user_followers`
+  ADD CONSTRAINT `cyo_user_followers_followed_user_id_foreign` FOREIGN KEY (`followed_user_id`) REFERENCES `cyo_users` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cyo_user_followers_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `cyo_users` (`id`) ON DELETE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

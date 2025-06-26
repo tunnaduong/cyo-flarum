@@ -21,7 +21,14 @@
         "docs": "https://docs.flarum.org/"
     },
     "require": {
+        "blomstra/flarum-redis": "*",
         "cweagans/composer-patches": "^1.7",
+        "datlechin/flarum-birthdays": "*",
+        "datlechin/flarum-chatgpt": "*",
+        "datlechin/flarum-link-preview": "^1.6",
+        "datlechin/flarum-more-discussions": "*",
+        "datlechin/flarum-signup-button": "*",
+        "datlechin/flarum-traditional-rank-icons": "*",
         "flarum-lang/vietnamese": "^1.10",
         "flarum/approval": "*",
         "flarum/bbcode": "*",
@@ -42,16 +49,20 @@
         "flarum/suspend": "*",
         "flarum/tags": "*",
         "fof/follow-tags": "^1.2",
+        "fof/gamification": "^1.6",
         "fof/nightmode": "*",
-        "fof/upload": "*",
+        "fof/upload": "^1.8",
         "ianm/follow-users": "*",
+        "ianm/level-ranks": "*",
+        "v17development/flarum-user-badges": "^1.1",
         "xelson/flarum-ext-chat": "^1.1"
     },
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
         "allow-plugins": {
-            "cweagans/composer-patches": true
+            "cweagans/composer-patches": true,
+            "php-http/discovery": true
         }
     },
     "prefer-stable": true,
