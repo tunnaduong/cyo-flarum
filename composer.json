@@ -1,0 +1,66 @@
+{
+    "name": "flarum/flarum",
+    "description": "Delightfully simple forum software.",
+    "type": "project",
+    "keywords": [
+        "forum",
+        "discussion"
+    ],
+    "homepage": "https://flarum.org/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Flarum",
+            "email": "info@flarum.org",
+            "homepage": "https://flarum.org/team"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/flarum/core/issues",
+        "source": "https://github.com/flarum/flarum",
+        "docs": "https://docs.flarum.org/"
+    },
+    "require": {
+        "cweagans/composer-patches": "^1.7",
+        "flarum-lang/vietnamese": "^1.10",
+        "flarum/approval": "*",
+        "flarum/bbcode": "*",
+        "flarum/core": "^1.8",
+        "flarum/emoji": "*",
+        "flarum/extension-manager": "*",
+        "flarum/flags": "*",
+        "flarum/lang-english": "*",
+        "flarum/likes": "*",
+        "flarum/lock": "*",
+        "flarum/markdown": "*",
+        "flarum/mentions": "*",
+        "flarum/nicknames": "*",
+        "flarum/pusher": "*",
+        "flarum/statistics": "*",
+        "flarum/sticky": "*",
+        "flarum/subscriptions": "*",
+        "flarum/suspend": "*",
+        "flarum/tags": "*",
+        "fof/follow-tags": "^1.2",
+        "ianm/follow-users": "*",
+        "xelson/flarum-ext-chat": "^1.1"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "cweagans/composer-patches": true
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "stable",
+    "require-dev": {
+        "symplify/vendor-patches": "^11.4"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/datlechin/flarum-chat"
+        }
+    ]
+}

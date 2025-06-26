@@ -1,0 +1,352 @@
+[2025-06-25 12:59:28] composer.INFO: remove "fof/custom-footer"
+C:\laragon\www\cyo-flarum/composer.json has been updated
+Running composer update fof/custom-footer
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 0 installs, 0 updates, 1 removal
+  - Removing fof/custom-footer (1.1.2)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 150 installs, 0 updates, 0 removals
+  - Downloading axy/backtrace (2.0.0)
+  - Downloading components/font-awesome (5.15.4)
+  - Downloading composer/ca-bundle (1.5.2)
+  - Downloading symfony/polyfill-php80 (v1.31.0)
+  - Downloading symfony/deprecation-contracts (v3.5.0)
+  - Downloading symfony/finder (v5.4.43)
+  - Downloading composer/pcre (3.3.1)
+  - Downloading composer/class-map-generator (1.4.0)
+  - Downloading composer/metadata-minifier (1.0.0)
+  - Downloading composer/semver (3.4.3)
+  - Downloading composer/spdx-licenses (1.5.8)
+  - Downloading psr/log (1.1.4)
+  - Downloading composer/xdebug-handler (3.0.5)
+  - Downloading psr/http-message (1.1)
+  - Downloading dflydev/fig-cookies (v3.1.0)
+  - Downloading doctrine/deprecations (1.1.3)
+  - Downloading doctrine/event-manager (1.2.0)
+  - Downloading doctrine/cache (2.2.0)
+  - Downloading doctrine/dbal (2.13.9)
+  - Downloading doctrine/inflector (2.0.10)
+  - Downloading doctrine/lexer (1.2.3)
+  - Downloading symfony/polyfill-ctype (v1.31.0)
+  - Downloading webmozart/assert (1.11.0)
+  - Downloading dragonmantank/cron-expression (v3.4.0)
+  - Downloading wikimedia/less.php (v3.2.1)
+  - Downloading symfony/yaml (v5.4.44)
+  - Downloading symfony/translation-contracts (v2.5.3)
+  - Downloading symfony/polyfill-mbstring (v1.31.0)
+  - Downloading symfony/translation (v5.4.44)
+  - Downloading symfony/polyfill-intl-messageformatter (v1.31.0)
+  - Downloading symfony/polyfill-intl-normalizer (v1.31.0)
+  - Downloading symfony/polyfill-intl-idn (v1.31.0)
+  - Downloading symfony/mime (v5.4.43)
+  - Downloading psr/event-dispatcher (1.0.0)
+  - Downloading symfony/event-dispatcher-contracts (v3.5.0)
+  - Downloading symfony/event-dispatcher (v5.4.40)
+  - Downloading symfony/polyfill-intl-grapheme (v1.31.0)
+  - Downloading symfony/string (v6.4.12)
+  - Downloading psr/container (1.1.2)
+  - Downloading symfony/service-contracts (v3.5.0)
+  - Downloading symfony/polyfill-php73 (v1.31.0)
+  - Downloading symfony/console (v5.4.44)
+  - Downloading symfony/polyfill-php81 (v1.31.0)
+  - Downloading symfony/filesystem (v6.4.12)
+  - Downloading symfony/config (v5.4.40)
+  - Downloading sycho/errors (3.0.0)
+  - Downloading sycho/codecs-base64vlq (2.0.0)
+  - Downloading sycho/sourcemap (2.0.0)
+  - Downloading sycho/json-api (v0.5.2)
+  - Downloading voku/portable-ascii (1.6.1)
+  - Downloading psr/clock (1.0.0)
+  - Downloading carbonphp/carbon-doctrine-types (1.0.0)
+  - Downloading nesbot/carbon (2.72.5)
+  - Downloading illuminate/macroable (v8.83.27)
+  - Downloading psr/simple-cache (1.0.1)
+  - Downloading illuminate/contracts (v8.83.27)
+  - Downloading illuminate/collections (v8.83.27)
+  - Downloading illuminate/support (v8.83.27)
+  - Downloading illuminate/container (v8.83.27)
+  - Downloading illuminate/database (v8.83.27)
+  - Downloading staudenmeir/eloquent-eager-limit (v1.6.1)
+  - Downloading s9e/sweetdom (2.1.2)
+  - Downloading s9e/regexp-builder (1.4.6)
+  - Downloading s9e/text-formatter (2.14.3)
+  - Downloading psr/http-server-handler (1.0.2)
+  - Downloading psr/http-server-middleware (1.0.2)
+  - Downloading nikic/fast-route (v0.6.0)
+  - Downloading monolog/monolog (1.27.1)
+  - Downloading psr/http-factory (1.1.0)
+  - Downloading middlewares/utils (v3.3.0)
+  - Downloading middlewares/request-handler (v2.0.2)
+  - Downloading middlewares/base-path-router (v2.0.1)
+  - Downloading middlewares/base-path (v2.1.0)
+  - Downloading matthiasmullie/path-converter (1.1.3)
+  - Downloading matthiasmullie/minify (1.3.73)
+  - Downloading league/mime-type-detection (1.16.0)
+  - Downloading league/flysystem (1.1.10)
+  - Downloading laminas/laminas-escaper (2.13.0)
+  - Downloading fig/http-message-util (1.1.5)
+  - Downloading laminas/laminas-stratigility (3.12.0)
+  - Downloading ralouphie/getallheaders (3.0.3)
+  - Downloading guzzlehttp/psr7 (2.7.0)
+  - Downloading laminas/laminas-diactoros (2.26.0)
+  - Downloading laminas/laminas-httphandlerrunner (2.10.0)
+  - Downloading mobiledetect/mobiledetectlib (2.8.45)
+  - Downloading jaybizzle/crawler-detect (v1.2.120)
+  - Downloading jenssegers/agent (v2.6.4)
+  - Downloading intervention/image (2.7.2)
+  - Downloading illuminate/filesystem (v8.83.27)
+  - Downloading illuminate/pipeline (v8.83.27)
+  - Downloading illuminate/bus (v8.83.27)
+  - Downloading illuminate/events (v8.83.27)
+  - Downloading illuminate/view (v8.83.27)
+  - Downloading symfony/http-foundation (v5.4.44)
+  - Downloading illuminate/translation (v8.83.27)
+  - Downloading egulias/email-validator (2.1.25)
+  - Downloading illuminate/validation (v8.83.27)
+  - Downloading illuminate/session (v8.83.27)
+  - Downloading symfony/process (v5.4.44)
+  - Downloading ramsey/collection (2.0.0)
+  - Downloading brick/math (0.12.1)
+  - Downloading ramsey/uuid (4.7.6)
+  - Downloading opis/closure (3.6.3)
+  - Downloading laravel/serializable-closure (v1.3.5)
+  - Downloading illuminate/console (v8.83.27)
+  - Downloading illuminate/queue (v8.83.27)
+  - Downloading symfony/css-selector (v7.1.1)
+  - Downloading tijsverkoyen/css-to-inline-styles (v2.2.7)
+  - Downloading symfony/polyfill-iconv (v1.31.0)
+  - Downloading swiftmailer/swiftmailer (v6.3.0)
+  - Downloading nette/utils (v4.0.5)
+  - Downloading nette/schema (v1.3.2)
+  - Downloading dflydev/dot-access-data (v3.0.3)
+  - Downloading league/config (v1.2.0)
+  - Downloading league/commonmark (2.5.3)
+  - Downloading illuminate/mail (v8.83.27)
+  - Downloading illuminate/hashing (v8.83.27)
+  - Downloading illuminate/config (v8.83.27)
+  - Downloading illuminate/cache (v8.83.27)
+  - Downloading psr/http-client (1.0.3)
+  - Downloading guzzlehttp/promises (2.0.4)
+  - Downloading guzzlehttp/guzzle (7.9.2)
+  - Downloading filp/whoops (2.16.0)
+  - Downloading franzl/whoops-middleware (2.0.0)
+  - Downloading flarum/core (v1.8.7)
+  - Downloading flarum-lang/vietnamese (v1.10.2)
+  - Downloading flarum/flags (v1.8.1)
+  - Downloading flarum/approval (v1.8.2)
+  - Downloading flarum/bbcode (v1.8.0)
+  - Downloading flarum/emoji (v1.8.1)
+  - Downloading seld/signal-handler (2.0.2)
+  - Downloading seld/phar-utils (1.2.1)
+  - Downloading seld/jsonlint (1.11.0)
+  - Downloading react/promise (v3.2.0)
+  - Downloading justinrainbow/json-schema (5.3.0)
+  - Downloading composer/composer (2.8.1)
+  - Downloading flarum/extension-manager (v1.0.4)
+  - Downloading flarum/lang-english (v1.8.0)
+  - Downloading flarum/likes (v1.8.1)
+  - Downloading flarum/lock (v1.8.1)
+  - Downloading flarum/markdown (v1.8.1)
+  - Downloading flarum/mentions (v1.8.4)
+  - Downloading flarum/nicknames (v1.8.1)
+  - Downloading pusher/pusher-php-server (2.6.4)
+  - Downloading flarum/pusher (v1.8.1)
+  - Downloading flarum/statistics (v1.8.1)
+  - Downloading flarum/sticky (v1.8.1)
+  - Downloading flarum/subscriptions (v1.8.1)
+  - Downloading flarum/suspend (v1.8.3)
+  - Downloading flarum/tags (v1.8.2)
+   0/150 [>---------------------------]   0%
+   3/150 [>---------------------------]   2%
+  15/150 [==>-------------------------]  10%
+  29/150 [=====>----------------------]  19%
+  32/150 [=====>----------------------]  21%
+  47/150 [========>-------------------]  31%
+  53/150 [=========>------------------]  35%
+  60/150 [===========>----------------]  40%
+  74/150 [=============>--------------]  49%
+  76/150 [==============>-------------]  50%
+  90/150 [================>-----------]  60%
+ 105/150 [===================>--------]  70%
+ 121/150 [======================>-----]  80%
+ 131/150 [========================>---]  87%
+ 135/150 [=========================>--]  90%
+ 149/150 [===========================>]  99%
+ 150/150 [============================] 100%
+  - Installing axy/backtrace (2.0.0): Extracting archive
+  - Installing components/font-awesome (5.15.4): Extracting archive
+  - Installing composer/ca-bundle (1.5.2): Extracting archive
+  - Installing symfony/polyfill-php80 (v1.31.0): Extracting archive
+  - Installing symfony/deprecation-contracts (v3.5.0): Extracting archive
+  - Installing symfony/finder (v5.4.43): Extracting archive
+  - Installing composer/pcre (3.3.1): Extracting archive
+  - Installing composer/class-map-generator (1.4.0): Extracting archive
+  - Installing composer/metadata-minifier (1.0.0): Extracting archive
+  - Installing composer/semver (3.4.3): Extracting archive
+  - Installing composer/spdx-licenses (1.5.8): Extracting archive
+  - Installing psr/log (1.1.4): Extracting archive
+  - Installing composer/xdebug-handler (3.0.5): Extracting archive
+  - Installing psr/http-message (1.1): Extracting archive
+  - Installing dflydev/fig-cookies (v3.1.0): Extracting archive
+  - Installing doctrine/deprecations (1.1.3): Extracting archive
+  - Installing doctrine/event-manager (1.2.0): Extracting archive
+  - Installing doctrine/cache (2.2.0): Extracting archive
+  - Installing doctrine/dbal (2.13.9): Extracting archive
+  - Installing doctrine/inflector (2.0.10): Extracting archive
+  - Installing doctrine/lexer (1.2.3): Extracting archive
+  - Installing symfony/polyfill-ctype (v1.31.0): Extracting archive
+  - Installing webmozart/assert (1.11.0): Extracting archive
+  - Installing dragonmantank/cron-expression (v3.4.0): Extracting archive
+  - Installing wikimedia/less.php (v3.2.1): Extracting archive
+  - Installing symfony/yaml (v5.4.44): Extracting archive
+  - Installing symfony/translation-contracts (v2.5.3): Extracting archive
+  - Installing symfony/polyfill-mbstring (v1.31.0): Extracting archive
+  - Installing symfony/translation (v5.4.44): Extracting archive
+  - Installing symfony/polyfill-intl-messageformatter (v1.31.0): Extracting archive
+  - Installing symfony/polyfill-intl-normalizer (v1.31.0): Extracting archive
+  - Installing symfony/polyfill-intl-idn (v1.31.0): Extracting archive
+  - Installing symfony/mime (v5.4.43): Extracting archive
+  - Installing psr/event-dispatcher (1.0.0): Extracting archive
+  - Installing symfony/event-dispatcher-contracts (v3.5.0): Extracting archive
+  - Installing symfony/event-dispatcher (v5.4.40): Extracting archive
+  - Installing symfony/polyfill-intl-grapheme (v1.31.0): Extracting archive
+  - Installing symfony/string (v6.4.12): Extracting archive
+  - Installing psr/container (1.1.2): Extracting archive
+  - Installing symfony/service-contracts (v3.5.0): Extracting archive
+  - Installing symfony/polyfill-php73 (v1.31.0): Extracting archive
+  - Installing symfony/console (v5.4.44): Extracting archive
+  - Installing symfony/polyfill-php81 (v1.31.0): Extracting archive
+  - Installing symfony/filesystem (v6.4.12): Extracting archive
+  - Installing symfony/config (v5.4.40): Extracting archive
+  - Installing sycho/errors (3.0.0): Extracting archive
+  - Installing sycho/codecs-base64vlq (2.0.0): Extracting archive
+  - Installing sycho/sourcemap (2.0.0): Extracting archive
+  - Installing sycho/json-api (v0.5.2): Extracting archive
+  - Installing voku/portable-ascii (1.6.1): Extracting archive
+  - Installing psr/clock (1.0.0): Extracting archive
+  - Installing carbonphp/carbon-doctrine-types (1.0.0): Extracting archive
+  - Installing nesbot/carbon (2.72.5): Extracting archive
+  - Installing illuminate/macroable (v8.83.27): Extracting archive
+  - Installing psr/simple-cache (1.0.1): Extracting archive
+  - Installing illuminate/contracts (v8.83.27): Extracting archive
+  - Installing illuminate/collections (v8.83.27): Extracting archive
+  - Installing illuminate/support (v8.83.27): Extracting archive
+  - Installing illuminate/container (v8.83.27): Extracting archive
+  - Installing illuminate/database (v8.83.27): Extracting archive
+  - Installing staudenmeir/eloquent-eager-limit (v1.6.1): Extracting archive
+  - Installing s9e/sweetdom (2.1.2): Extracting archive
+  - Installing s9e/regexp-builder (1.4.6): Extracting archive
+  - Installing s9e/text-formatter (2.14.3): Extracting archive
+  - Installing psr/http-server-handler (1.0.2): Extracting archive
+  - Installing psr/http-server-middleware (1.0.2): Extracting archive
+  - Installing nikic/fast-route (v0.6.0): Extracting archive
+  - Installing monolog/monolog (1.27.1): Extracting archive
+  - Installing psr/http-factory (1.1.0): Extracting archive
+  - Installing middlewares/utils (v3.3.0): Extracting archive
+  - Installing middlewares/request-handler (v2.0.2): Extracting archive
+  - Installing middlewares/base-path-router (v2.0.1): Extracting archive
+  - Installing middlewares/base-path (v2.1.0): Extracting archive
+  - Installing matthiasmullie/path-converter (1.1.3): Extracting archive
+  - Installing matthiasmullie/minify (1.3.73): Extracting archive
+  - Installing league/mime-type-detection (1.16.0): Extracting archive
+  - Installing league/flysystem (1.1.10): Extracting archive
+  - Installing laminas/laminas-escaper (2.13.0): Extracting archive
+  - Installing fig/http-message-util (1.1.5): Extracting archive
+  - Installing laminas/laminas-stratigility (3.12.0): Extracting archive
+  - Installing ralouphie/getallheaders (3.0.3): Extracting archive
+  - Installing guzzlehttp/psr7 (2.7.0): Extracting archive
+  - Installing laminas/laminas-diactoros (2.26.0): Extracting archive
+  - Installing laminas/laminas-httphandlerrunner (2.10.0): Extracting archive
+  - Installing mobiledetect/mobiledetectlib (2.8.45): Extracting archive
+  - Installing jaybizzle/crawler-detect (v1.2.120): Extracting archive
+  - Installing jenssegers/agent (v2.6.4): Extracting archive
+  - Installing intervention/image (2.7.2): Extracting archive
+  - Installing illuminate/filesystem (v8.83.27): Extracting archive
+  - Installing illuminate/pipeline (v8.83.27): Extracting archive
+  - Installing illuminate/bus (v8.83.27): Extracting archive
+  - Installing illuminate/events (v8.83.27): Extracting archive
+  - Installing illuminate/view (v8.83.27): Extracting archive
+  - Installing symfony/http-foundation (v5.4.44): Extracting archive
+  - Installing illuminate/translation (v8.83.27): Extracting archive
+  - Installing egulias/email-validator (2.1.25): Extracting archive
+  - Installing illuminate/validation (v8.83.27): Extracting archive
+  - Installing illuminate/session (v8.83.27): Extracting archive
+  - Installing symfony/process (v5.4.44): Extracting archive
+  - Installing ramsey/collection (2.0.0): Extracting archive
+  - Installing brick/math (0.12.1): Extracting archive
+  - Installing ramsey/uuid (4.7.6): Extracting archive
+  - Installing opis/closure (3.6.3): Extracting archive
+  - Installing laravel/serializable-closure (v1.3.5): Extracting archive
+  - Installing illuminate/console (v8.83.27): Extracting archive
+  - Installing illuminate/queue (v8.83.27): Extracting archive
+  - Installing symfony/css-selector (v7.1.1): Extracting archive
+  - Installing tijsverkoyen/css-to-inline-styles (v2.2.7): Extracting archive
+  - Installing symfony/polyfill-iconv (v1.31.0): Extracting archive
+  - Installing swiftmailer/swiftmailer (v6.3.0): Extracting archive
+  - Installing nette/utils (v4.0.5): Extracting archive
+  - Installing nette/schema (v1.3.2): Extracting archive
+  - Installing dflydev/dot-access-data (v3.0.3): Extracting archive
+  - Installing league/config (v1.2.0): Extracting archive
+  - Installing league/commonmark (2.5.3): Extracting archive
+  - Installing illuminate/mail (v8.83.27): Extracting archive
+  - Installing illuminate/hashing (v8.83.27): Extracting archive
+  - Installing illuminate/config (v8.83.27): Extracting archive
+  - Installing illuminate/cache (v8.83.27): Extracting archive
+  - Installing psr/http-client (1.0.3): Extracting archive
+  - Installing guzzlehttp/promises (2.0.4): Extracting archive
+  - Installing guzzlehttp/guzzle (7.9.2): Extracting archive
+  - Installing filp/whoops (2.16.0): Extracting archive
+  - Installing franzl/whoops-middleware (2.0.0): Extracting archive
+  - Installing flarum/core (v1.8.7): Extracting archive
+  - Installing flarum-lang/vietnamese (v1.10.2): Extracting archive
+  - Installing flarum/flags (v1.8.1): Extracting archive
+  - Installing flarum/approval (v1.8.2): Extracting archive
+  - Installing flarum/bbcode (v1.8.0): Extracting archive
+  - Installing flarum/emoji (v1.8.1): Extracting archive
+  - Installing seld/signal-handler (2.0.2): Extracting archive
+  - Installing seld/phar-utils (1.2.1): Extracting archive
+  - Installing seld/jsonlint (1.11.0): Extracting archive
+  - Installing react/promise (v3.2.0): Extracting archive
+  - Installing justinrainbow/json-schema (5.3.0): Extracting archive
+  - Installing composer/composer (2.8.1): Extracting archive
+  - Installing flarum/extension-manager (v1.0.4): Extracting archive
+  - Installing flarum/lang-english (v1.8.0): Extracting archive
+  - Installing flarum/likes (v1.8.1): Extracting archive
+  - Installing flarum/lock (v1.8.1): Extracting archive
+  - Installing flarum/markdown (v1.8.1): Extracting archive
+  - Installing flarum/mentions (v1.8.4): Extracting archive
+  - Installing flarum/nicknames (v1.8.1): Extracting archive
+  - Installing pusher/pusher-php-server (2.6.4): Extracting archive
+  - Installing flarum/pusher (v1.8.1): Extracting archive
+  - Installing flarum/statistics (v1.8.1): Extracting archive
+  - Installing flarum/sticky (v1.8.1): Extracting archive
+  - Installing flarum/subscriptions (v1.8.1): Extracting archive
+  - Installing flarum/suspend (v1.8.3): Extracting archive
+  - Installing flarum/tags (v1.8.2): Extracting archive
+   0/150 [>---------------------------]   0%
+  19/150 [===>------------------------]  12%
+  38/150 [=======>--------------------]  25%
+  47/150 [========>-------------------]  31%
+  56/150 [==========>-----------------]  37%
+  62/150 [===========>----------------]  41%
+  77/150 [==============>-------------]  51%
+  86/150 [================>-----------]  57%
+  93/150 [=================>----------]  62%
+ 101/150 [==================>---------]  67%
+ 109/150 [====================>-------]  72%
+ 117/150 [=====================>------]  78%
+ 123/150 [======================>-----]  82%
+ 132/150 [========================>---]  88%
+ 136/150 [=========================>--]  90%
+ 146/150 [===========================>]  97%
+ 149/150 [===========================>]  99%
+ 150/150 [============================] 100%
+<warning>Package swiftmailer/swiftmailer is abandoned, you should avoid using it. Use symfony/mailer instead.</warning>
+Generating autoload files
+87 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+<warning>Found 6 security vulnerability advisories affecting 5 packages.</warning>
+Run "composer audit" for a full list of advisories.
+  
