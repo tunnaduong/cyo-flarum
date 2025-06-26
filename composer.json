@@ -43,6 +43,7 @@
         "flarum/tags": "*",
         "fof/follow-tags": "^1.2",
         "fof/nightmode": "*",
+        "fof/upload": "*",
         "ianm/follow-users": "*",
         "xelson/flarum-ext-chat": "^1.1"
     },

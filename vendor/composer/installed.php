@@ -3,7 +3,7 @@
         'name' => 'flarum/flarum',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'fad895094257db5d447020d6466c8f0f3d71a4a2',
+        'reference' => '4598089bcf6e75b36d5d6be4c008709102472bef',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -217,6 +217,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'enshrined/svg-sanitize' => array(
+            'pretty_version' => '0.21.0',
+            'version' => '0.21.0.0',
+            'reference' => '5e477468fac5c5ce933dce53af3e8e4e58dcccc9',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../enshrined/svg-sanitize',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'fig/http-message-util' => array(
             'pretty_version' => '1.1.5',
             'version' => '1.1.5.0',
@@ -234,6 +243,12 @@
             'install_path' => __DIR__ . '/../filp/whoops',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'flagrow/upload' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '*',
+            ),
         ),
         'flarum-lang/vietnamese' => array(
             'pretty_version' => 'v1.10.2',
@@ -301,7 +316,7 @@
         'flarum/flarum' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'fad895094257db5d447020d6466c8f0f3d71a4a2',
+            'reference' => '4598089bcf6e75b36d5d6be4c008709102472bef',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -439,6 +454,15 @@
             'reference' => 'b65b1b4d092502a9e3801eb8d717ddd1f0f39d7a',
             'type' => 'flarum-extension',
             'install_path' => __DIR__ . '/../fof/nightmode',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'fof/upload' => array(
+            'pretty_version' => '1.8.3',
+            'version' => '1.8.3.0',
+            'reference' => '17ed7e12172b549917d79ee8edc5826c197587bd',
+            'type' => 'flarum-extension',
+            'install_path' => __DIR__ . '/../fof/upload',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -1085,9 +1109,9 @@
             'dev_requirement' => false,
         ),
         'ramsey/uuid' => array(
-            'pretty_version' => '4.8.1',
-            'version' => '4.8.1.0',
-            'reference' => 'fdf4dd4e2ff1813111bd0ad58d7a1ddbb5b56c28',
+            'pretty_version' => '4.9.0',
+            'version' => '4.9.0.0',
+            'reference' => '4e0e23cc785f0724a0e838279a9eb03f28b092a0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../ramsey/uuid',
             'aliases' => array(),
@@ -1111,7 +1135,7 @@
         'rhumsaa/uuid' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '4.8.1',
+                0 => '4.9.0',
             ),
         ),
         's9e/regexp-builder' => array(
@@ -1165,6 +1189,15 @@
             'reference' => '04a6112e883ad76c0ada8e4a9f7520bbfdb6bb98',
             'type' => 'library',
             'install_path' => __DIR__ . '/../seld/signal-handler',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'softcreatr/php-mime-detector' => array(
+            'pretty_version' => '4.0.0',
+            'version' => '4.0.0.0',
+            'reference' => 'ae204590de58cc4655c8fbf9a2dfbcbb21dae4fe',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../softcreatr/php-mime-detector',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

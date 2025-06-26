@@ -33,7 +33,7 @@ export default class ChatFrame extends Component {
     const style = { right: app.chat.getFrameState('transform').x + 'px', height: this.calcHeight() };
 
     return (
-      <div className={'NeonChatFrame ' + (app.chat.getFrameState('beingShown') ? '' : 'hidden')} style={style}>
+      <div className={'NeonChatFrame !block ' + (app.chat.getFrameState('beingShown') ? '' : 'hidden')} style={style}>
         <div tabindex="0" className="frame" id="chat">
           <ChatList></ChatList>
 

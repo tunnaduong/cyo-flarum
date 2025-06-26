@@ -12,15 +12,18 @@
                 <div class="Header-title">
                     <a href="{{ $forum['baseUrl'] }}" id="home-link">
                         @if ($forum['logoUrl'])
-                        <div style="display: flex; align-items: center; gap: 5px;">
-                            <img src="{{ $forum['logoUrl'] }}" alt="{{ $forum['title'] }}" class="Header-logo" style="max-height: 40px">
-                            <div>
-                                <h1 style="font-size: 14.2px; font-weight: 300; margin: 0">Diễn đàn học sinh</h1>
-                                <h1 style="font-weight: 700; margin: 0; font-size: 14.2px;">Chuyên Biên Hòa</h1>
+                            <div style="display: flex; align-items: center; gap: 5px;">
+                                <img src="{{ $forum['logoUrl'] }}" alt="{{ $forum['title'] }}" class="Header-logo"
+                                    style="max-height: 40px">
+                                <div>
+                                    <h1 style="font-size: 14.2px; font-weight: 300; margin: 0" class="text-[#319527]">
+                                        Diễn đàn học sinh</h1>
+                                    <h1 style="font-weight: 700; margin: 0; font-size: 14.2px;" class="text-[#319527]">
+                                        Chuyên Biên Hòa</h1>
+                                </div>
                             </div>
-                        </div>
                         @else
-                        {{ $forum['title'] }}
+                            {{ $forum['title'] }}
                         @endif
                     </a>
                 </div>

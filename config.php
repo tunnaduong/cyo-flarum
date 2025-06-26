@@ -15,7 +15,7 @@
     'engine' => 'InnoDB',
     'prefix_indexes' => true,
   ),
-  'url' => 'http://127.0.0.1:8000',
+  'url' => 'https://cyo-flarum.net',
   'paths' =>
   array(
     'api' => 'api',
