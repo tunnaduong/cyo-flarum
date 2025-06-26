@@ -104,6 +104,7 @@ return array(
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
     'Franzl\\Middleware\\Whoops\\' => array($vendorDir . '/franzl/whoops-middleware/src'),
+    'FoF\\NightMode\\' => array($vendorDir . '/fof/nightmode/src'),
     'FoF\\FollowTags\\' => array($vendorDir . '/fof/follow-tags/src'),
     'FoF\\Extend\\' => array($vendorDir . '/fof/extend/src'),
     'Flarum\\Tags\\' => array($vendorDir . '/flarum/tags/src'),

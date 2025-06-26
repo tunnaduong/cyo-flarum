@@ -42,6 +42,9 @@ class ComposerStaticInit48252e6b695eb395ae67d3d5216183d4
         '04b6576f786ea6b5b4b577af08f8e4d1' => __DIR__ . '/..' . '/symfony/polyfill-intl-messageformatter/bootstrap.php',
         '84245cb95409c51c4ae97f8e59da883a' => __DIR__ . '/..' . '/flarum/core/src/helpers.php',
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
+        '2a1113d34562ecc8c338eb5d2958a97a' => __DIR__ . '/..' . '/fof/nightmode/src/Overrides/Forum/ValidateCustomLess.php',
+        'd7a2467b87902a3ab793df7784bc6b7f' => __DIR__ . '/..' . '/fof/nightmode/src/Overrides/Frontend/Assets.php',
+        '1cf00d7bbe38b83167217839a255780f' => __DIR__ . '/..' . '/fof/nightmode/src/Overrides/Frontend/RecompileFrontendAssets.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -193,6 +196,7 @@ class ComposerStaticInit48252e6b695eb395ae67d3d5216183d4
         'F' => 
         array (
             'Franzl\\Middleware\\Whoops\\' => 25,
+            'FoF\\NightMode\\' => 14,
             'FoF\\FollowTags\\' => 15,
             'FoF\\Extend\\' => 11,
             'Flarum\\Tags\\' => 12,
@@ -646,6 +650,10 @@ class ComposerStaticInit48252e6b695eb395ae67d3d5216183d4
         'Franzl\\Middleware\\Whoops\\' => 
         array (
             0 => __DIR__ . '/..' . '/franzl/whoops-middleware/src',
+        ),
+        'FoF\\NightMode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fof/nightmode/src',
         ),
         'FoF\\FollowTags\\' => 
         array (

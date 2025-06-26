@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'flarum/flarum',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'fad895094257db5d447020d6466c8f0f3d71a4a2',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -299,9 +299,9 @@
             'dev_requirement' => false,
         ),
         'flarum/flarum' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'fad895094257db5d447020d6466c8f0f3d71a4a2',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -430,6 +430,15 @@
             'reference' => 'decbaad1974fa82db2118808bc5cf4606c5a4603',
             'type' => 'flarum-extension',
             'install_path' => __DIR__ . '/../fof/follow-tags',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'fof/nightmode' => array(
+            'pretty_version' => '1.6.0',
+            'version' => '1.6.0.0',
+            'reference' => 'b65b1b4d092502a9e3801eb8d717ddd1f0f39d7a',
+            'type' => 'flarum-extension',
+            'install_path' => __DIR__ . '/../fof/nightmode',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -1092,6 +1101,12 @@
             'install_path' => __DIR__ . '/../react/promise',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'reflar/nightmode' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '*',
+            ),
         ),
         'rhumsaa/uuid' => array(
             'dev_requirement' => false,
