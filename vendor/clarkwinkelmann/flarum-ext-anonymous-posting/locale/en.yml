@@ -28,8 +28,8 @@ clarkwinkelmann-anonymous-posting:
             moderate: Anonymize or de-anonymize any discussion or post
     forum:
         composerControls:
-            anonymize: Post anonymously
-            anonymizeHelp: Moderators will still know you created this content
+            anonymize: Đăng ẩn danh
+            anonymizeHelp: Người kiểm duyệt vẫn sẽ thấy nội dung bạn đăng
         discussionControls:
             anonymize: Anonymize
             anonymizeConfirmation: This will make the discussion author anonymous. The first post must be anonymized separately. Continue?
@@ -41,13 +41,13 @@ clarkwinkelmann-anonymous-posting:
             deanonymize: De-anonymize
             deanonymizeConfirmation: This will make the original author of the post public again. Continue?
         discussionList:
-            genericReplyText: Last replied {ago}
+            genericReplyText: Trả lời lần cuối {ago}
         postPrivacy:
-            mine: Me
-            mineHelp: Only you can see this information
-            profile: Visible only to you
-            profileHelp: Only you can see your anonymous posts on your profile
+            mine: Chỉ mình tôi
+            mineHelp: Chỉ mình bạn mới thấy nội dung này
+            profile: Chỉ hiển thị cho bạn
+            profileHelp: Chỉ bạn mới có thể thấy những bài viết ẩn danh của bạn trên hồ sơ
     lib:
         userMeta:
             initials: "?"
-            username: Anonymous
+            username: Ẩn danh
