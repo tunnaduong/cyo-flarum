@@ -239,8 +239,10 @@ class ComposerStaticInit48252e6b695eb395ae67d3d5216183d4
             'FoF\\SocialProfile\\' => 18,
             'FoF\\Reactions\\' => 14,
             'FoF\\PrettyMail\\' => 15,
+            'FoF\\Pages\\' => 10,
             'FoF\\OAuth\\' => 10,
             'FoF\\NightMode\\' => 14,
+            'FoF\\Links\\' => 10,
             'FoF\\Gamification\\' => 17,
             'FoF\\FollowTags\\' => 15,
             'FoF\\Extend\\' => 11,
@@ -294,6 +296,7 @@ class ComposerStaticInit48252e6b695eb395ae67d3d5216183d4
             'Composer\\ClassMapGenerator\\' => 27,
             'Composer\\CaBundle\\' => 18,
             'Composer\\' => 9,
+            'ClarkWinkelmann\\TranslationInspector\\' => 37,
             'ClarkWinkelmann\\PostBookmarks\\' => 30,
             'ClarkWinkelmann\\AnonymousPosting\\' => 33,
             'Carbon\\Doctrine\\' => 16,
@@ -832,6 +835,10 @@ class ComposerStaticInit48252e6b695eb395ae67d3d5216183d4
         array (
             0 => __DIR__ . '/..' . '/fof/pretty-mail/src',
         ),
+        'FoF\\Pages\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fof/pages/src',
+        ),
         'FoF\\OAuth\\' => 
         array (
             0 => __DIR__ . '/..' . '/fof/oauth/src',
@@ -839,6 +846,10 @@ class ComposerStaticInit48252e6b695eb395ae67d3d5216183d4
         'FoF\\NightMode\\' => 
         array (
             0 => __DIR__ . '/..' . '/fof/nightmode/src',
+        ),
+        'FoF\\Links\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fof/links/src',
         ),
         'FoF\\Gamification\\' => 
         array (
@@ -1015,6 +1026,10 @@ class ComposerStaticInit48252e6b695eb395ae67d3d5216183d4
         'Composer\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/composer/src/Composer',
+        ),
+        'ClarkWinkelmann\\TranslationInspector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/clarkwinkelmann/flarum-ext-translation-inspector/src',
         ),
         'ClarkWinkelmann\\PostBookmarks\\' => 
         array (

@@ -703,6 +703,71 @@
             "install-path": "../clarkwinkelmann/flarum-ext-post-bookmarks"
         },
         {
+            "name": "clarkwinkelmann/flarum-ext-translation-inspector",
+            "version": "0.1.0",
+            "version_normalized": "0.1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clarkwinkelmann/flarum-ext-translation-inspector.git",
+                "reference": "15469ad55ee2b66cde940ef7416a737875bf58e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clarkwinkelmann/flarum-ext-translation-inspector/zipball/15469ad55ee2b66cde940ef7416a737875bf58e9",
+                "reference": "15469ad55ee2b66cde940ef7416a737875bf58e9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "flarum/core": "^1.0"
+            },
+            "time": "2021-06-04T19:22:55+00:00",
+            "type": "flarum-extension",
+            "extra": {
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/26192"
+                },
+                "flarum-extension": {
+                    "icon": {
+                        "name": "fas fa-highlighter",
+                        "color": "#fff",
+                        "backgroundColor": "#684ba6"
+                    },
+                    "title": "Translation Inspector",
+                    "category": "language"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ClarkWinkelmann\\TranslationInspector\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Clark Winkelmann",
+                    "email": "clark.winkelmann@gmail.com",
+                    "homepage": "https://clarkwinkelmann.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Enable forum users to find details about translations",
+            "keywords": [
+                "Devtools",
+                "flarum"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/26192",
+                "issues": "https://github.com/clarkwinkelmann/flarum-ext-translation-inspector/issues",
+                "source": "https://github.com/clarkwinkelmann/flarum-ext-translation-inspector"
+            },
+            "install-path": "../clarkwinkelmann/flarum-ext-translation-inspector"
+        },
+        {
             "name": "components/font-awesome",
             "version": "5.15.4",
             "version_normalized": "5.15.4.0",
@@ -4986,6 +5051,89 @@
             "install-path": "../fof/gamification"
         },
         {
+            "name": "fof/links",
+            "version": "1.3.0",
+            "version_normalized": "1.3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/links.git",
+                "reference": "80ee6577fcd7d5d49fe727729d30b3370c12ce5c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/links/zipball/80ee6577fcd7d5d49fe727729d30b3370c12ce5c",
+                "reference": "80ee6577fcd7d5d49fe727729d30b3370c12ce5c",
+                "shasum": ""
+            },
+            "require": {
+                "flarum/core": "^1.8.6"
+            },
+            "replace": {
+                "sijad/flarum-ext-links": "*"
+            },
+            "require-dev": {
+                "flarum/phpstan": "*",
+                "flarum/tags": "*",
+                "flarum/testing": "^1.0.0"
+            },
+            "time": "2024-10-14T13:16:09+00:00",
+            "type": "flarum-extension",
+            "extra": {
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/18335"
+                },
+                "flarum-cli": {
+                    "modules": {
+                        "githubActions": true,
+                        "backendTesting": true
+                    }
+                },
+                "flarum-extension": {
+                    "icon": {
+                        "name": "fas fa-bars",
+                        "color": "#fff",
+                        "backgroundColor": "#e74c3c"
+                    },
+                    "title": "FoF Links",
+                    "category": "feature"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "FoF\\Links\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Sevilla Martín",
+                    "email": "me+fof@datitisev.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Manage Flarum primary navbar menu links",
+            "homepage": "https://friendsofflarum.org",
+            "keywords": [
+                "flarum"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/18335",
+                "issues": "https://github.com/FriendsOfFlarum/links/issues",
+                "source": "https://github.com/FriendsOfFlarum/links"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof/donate",
+                    "type": "website"
+                }
+            ],
+            "install-path": "../fof/links"
+        },
+        {
             "name": "fof/nightmode",
             "version": "1.6.0",
             "version_normalized": "1.6.0.0",
@@ -5197,6 +5345,91 @@
                 }
             ],
             "install-path": "../fof/oauth"
+        },
+        {
+            "name": "fof/pages",
+            "version": "1.0.8",
+            "version_normalized": "1.0.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/pages.git",
+                "reference": "df824eaf1a9d5a370cdfb76e738c2f25c7b317f8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/pages/zipball/df824eaf1a9d5a370cdfb76e738c2f25c7b317f8",
+                "reference": "df824eaf1a9d5a370cdfb76e738c2f25c7b317f8",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "flarum/core": "^1.2"
+            },
+            "replace": {
+                "sijad/flarum-ext-pages": "*"
+            },
+            "require-dev": {
+                "flarum/phpstan": "*"
+            },
+            "time": "2023-11-12T10:51:30+00:00",
+            "type": "flarum-extension",
+            "extra": {
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/18301"
+                },
+                "flarum-cli": {
+                    "modules": {
+                        "githubActions": true
+                    }
+                },
+                "flarum-extension": {
+                    "icon": {
+                        "name": "far fa-file-alt",
+                        "color": "#fff",
+                        "backgroundColor": "#e74c3c"
+                    },
+                    "title": "FoF Pages",
+                    "category": "feature"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "FoF\\Pages\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sajjad Hashemian",
+                    "email": "wolaws@gmail.com"
+                },
+                {
+                    "name": "David Sevilla Martín",
+                    "email": "david.s@redevs.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Create custom pages with Flarum",
+            "homepage": "https://friendsofflarum.org",
+            "keywords": [
+                "flarum"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/18301",
+                "issues": "https://github.com/FriendsOfFlarum/pages/issues",
+                "source": "https://github.com/FriendsOfFlarum/pages"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof/donate",
+                    "type": "website"
+                }
+            ],
+            "install-path": "../fof/pages"
         },
         {
             "name": "fof/pretty-mail",

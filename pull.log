@@ -2,3 +2,30 @@ Current branch main is up to date.
 Successfully pulled backend
 Already up to date.
 Successfully pulled backend
+Removing public/assets/files/2025-06-27/
+Removing public/assets/forum-dark.css
+Removing public/assets/forum-vi.js
+Removing public/assets/forum-vi.js.map
+Removing public/assets/forum.css
+Removing public/assets/forum.js
+Removing public/assets/forum.js.map
+Removing storage/less/lessphp_4v3jlaoyv5ogsc0skgw44wcckgosk8c.lesscache
+Removing storage/less/lessphp_73pfi8d6t1s80sckswsc84sgg0wgswg.lesscache
+Removing storage/less/lessphp_al3qrahhiwgs48s8ww4c8wc4ww400g8.lesscache
+Removing storage/less/lessphp_ejzpbjivfjwc84w8wkww8sc4wgg0kgk.lesscache
+Removing storage/less/lessphp_hohkbjdvtsg8k8o0c0sc484gk4k8w04.lesscache
+Removing storage/less/lessphp_iireeofsdxws0404ckkcs080008wosc.lesscache
+Removing storage/less/lessphp_nevfr1rd1e8cg0owow0s8kows4gcsos.lesscache
+Removing storage/less/lessphp_rbbzfy7gmysg0swowsgkwg8o8k880kw.lesscache
+Removing storage/less/lessphp_st3oh8kvqescgks8ksgk4k0skkw0s8k.lesscache
+Removing storage/private-shared/
+Removing vendor/afrux/online-users-widget/tests/fixtures/
+Removing vendor/afrux/online-users-widget/tests/unit/
+Removing vendor/fof/oauth/tests/fixtures/
+Removing vendor/fof/oauth/tests/unit/
+Removing vendor/fof/pages/
+Removing vendor/fof/reactions/tests/fixtures/
+Removing vendor/fof/reactions/tests/unit/
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+Successfully pulled backend
