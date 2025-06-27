@@ -8,7 +8,6 @@ deteh-online-guests:
 
   forum:
     widget:
-      title: Online Guests
+      title: Khách đang truy cập
       description: Shows the number of guests currently browsing the forum (based on discusion views)
-      guests_online: "{count, plural, one {guest online} other {guests online}}"
-
+      guests_online: "{count, plural, one {khách} other {khách}}"
