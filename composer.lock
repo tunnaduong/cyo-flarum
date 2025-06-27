@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "825c540446eac6c18df51cb659c2fc49",
+    "content-hash": "790d2e3a60be9360eb8cd05160f81152",
     "packages": [
         {
             "name": "axy/backtrace",
@@ -307,6 +307,67 @@
                 "source": "https://github.com/clarkwinkelmann/flarum-ext-anonymous-posting"
             },
             "time": "2023-03-09T18:14:17+00:00"
+        },
+        {
+            "name": "clarkwinkelmann/flarum-ext-post-bookmarks",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clarkwinkelmann/flarum-ext-post-bookmarks.git",
+                "reference": "bbdf570097d6c33e7f3ef945ad1427c91c0c3189"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clarkwinkelmann/flarum-ext-post-bookmarks/zipball/bbdf570097d6c33e7f3ef945ad1427c91c0c3189",
+                "reference": "bbdf570097d6c33e7f3ef945ad1427c91c0c3189",
+                "shasum": ""
+            },
+            "require": {
+                "flarum/core": "^1.0"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/27698"
+                },
+                "flarum-extension": {
+                    "icon": {
+                        "name": "fas fa-bookmark",
+                        "color": "#fff",
+                        "backgroundColor": "#684ba6"
+                    },
+                    "title": "Post Bookmarks",
+                    "category": "feature"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ClarkWinkelmann\\PostBookmarks\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Clark Winkelmann",
+                    "email": "clark.winkelmann@gmail.com",
+                    "homepage": "https://clarkwinkelmann.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Bookmark posts to find them easily later",
+            "keywords": [
+                "bookmark",
+                "flarum"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/27698",
+                "issues": "https://github.com/clarkwinkelmann/flarum-ext-post-bookmarks/issues",
+                "source": "https://github.com/clarkwinkelmann/flarum-ext-post-bookmarks"
+            },
+            "time": "2021-06-11T01:51:20+00:00"
         },
         {
             "name": "components/font-awesome",

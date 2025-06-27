@@ -278,6 +278,7 @@ class ComposerStaticInit48252e6b695eb395ae67d3d5216183d4
             'Composer\\ClassMapGenerator\\' => 27,
             'Composer\\CaBundle\\' => 18,
             'Composer\\' => 9,
+            'ClarkWinkelmann\\PostBookmarks\\' => 30,
             'ClarkWinkelmann\\AnonymousPosting\\' => 33,
             'Carbon\\Doctrine\\' => 16,
             'Carbon\\' => 7,
@@ -940,6 +941,10 @@ class ComposerStaticInit48252e6b695eb395ae67d3d5216183d4
         'Composer\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/composer/src/Composer',
+        ),
+        'ClarkWinkelmann\\PostBookmarks\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/clarkwinkelmann/flarum-ext-post-bookmarks/src',
         ),
         'ClarkWinkelmann\\AnonymousPosting\\' => 
         array (

@@ -167,6 +167,7 @@ return array(
     'Composer\\ClassMapGenerator\\' => array($vendorDir . '/composer/class-map-generator/src'),
     'Composer\\CaBundle\\' => array($vendorDir . '/composer/ca-bundle/src'),
     'Composer\\' => array($vendorDir . '/composer/composer/src/Composer'),
+    'ClarkWinkelmann\\PostBookmarks\\' => array($vendorDir . '/clarkwinkelmann/flarum-ext-post-bookmarks/src'),
     'ClarkWinkelmann\\AnonymousPosting\\' => array($vendorDir . '/clarkwinkelmann/flarum-ext-anonymous-posting/src'),
     'Carbon\\Doctrine\\' => array($vendorDir . '/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
