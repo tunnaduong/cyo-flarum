@@ -15,8 +15,8 @@ xelson-chat:
         settings: Thiết lập trò chuyện
     chat:
       welcome:
-        header: Chào mừng đến với Neon Chat!
-        subheader: Chọn phòng trò chuyện bên trái để bắt đầu trò chuyện với mọi người 
+        header: Chào mừng đến với CBH Youth Online!
+        subheader: Chọn phòng trò chuyện bên trái để bắt đầu trò chuyện với mọi người
       moder: Kiểm duyệt
       kick: Kích
       leave: Rời
