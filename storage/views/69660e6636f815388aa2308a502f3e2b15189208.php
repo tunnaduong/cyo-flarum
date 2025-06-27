@@ -1,2 +1,0 @@
-<img class="FoFUpload--Upl-Image-Preview" src="{@url}" title="{@title}" alt="{@alt}" data-id="{@uuid}" loading="lazy"/>
-<?php /**PATH C:\laragon\www\cyo-flarum\vendor\fof\upload/resources/templates/image-preview.blade.php ENDPATH**/ ?>
