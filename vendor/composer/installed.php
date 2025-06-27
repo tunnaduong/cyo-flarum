@@ -3,7 +3,7 @@
         'name' => 'flarum/flarum',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '22b5206bbfd4c3d809852ef48ff7cc5f1d3f90f0',
+        'reference' => '2529311b80aa645a8e0f6af4ac38b90a2e568bec',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -43,6 +43,15 @@
             'reference' => '3c430083d0b41ceed84ecccf9dac613241d7305d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../carbonphp/carbon-doctrine-types',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'clarkwinkelmann/flarum-ext-anonymous-posting' => array(
+            'pretty_version' => '1.1.1',
+            'version' => '1.1.1.0',
+            'reference' => '6a1c6bfc5251c8e66dc0943b48bb33df5755ce81',
+            'type' => 'flarum-extension',
+            'install_path' => __DIR__ . '/../clarkwinkelmann/flarum-ext-anonymous-posting',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -388,7 +397,7 @@
         'flarum/flarum' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '22b5206bbfd4c3d809852ef48ff7cc5f1d3f90f0',
+            'reference' => '2529311b80aa645a8e0f6af4ac38b90a2e568bec',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1171,8 +1180,8 @@
         'psr/http-client-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '*',
-                1 => '1.0',
+                0 => '1.0',
+                1 => '*',
             ),
         ),
         'psr/http-factory' => array(
@@ -1187,9 +1196,9 @@
         'psr/http-factory-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '*',
-                1 => '1.0',
-                2 => '^1.0',
+                0 => '1.0',
+                1 => '^1.0',
+                2 => '*',
             ),
         ),
         'psr/http-message' => array(
@@ -1204,9 +1213,9 @@
         'psr/http-message-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '*',
-                1 => '1.0',
-                2 => '^1.1 || ^2.0',
+                0 => '1.0',
+                1 => '^1.1 || ^2.0',
+                2 => '*',
             ),
         ),
         'psr/http-server-handler' => array(
@@ -1749,6 +1758,15 @@
             'install_path' => __DIR__ . '/../symplify/vendor-patches',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'the-turk/flarum-flamoji' => array(
+            'pretty_version' => '1.0.4',
+            'version' => '1.0.4.0',
+            'reference' => '1c9a886cdcac0a997f4351a4ae64c1c8aa0dbcc2',
+            'type' => 'flarum-extension',
+            'install_path' => __DIR__ . '/../the-turk/flarum-flamoji',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'tijsverkoyen/css-to-inline-styles' => array(
             'pretty_version' => 'v2.3.0',

@@ -92,6 +92,7 @@ class ComposerStaticInit48252e6b695eb395ae67d3d5216183d4
         array (
             'Tobscure\\JsonApi\\' => 17,
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
+            'TheTurk\\Flamoji\\' => 16,
         ),
         'S' => 
         array (
@@ -277,6 +278,7 @@ class ComposerStaticInit48252e6b695eb395ae67d3d5216183d4
             'Composer\\ClassMapGenerator\\' => 27,
             'Composer\\CaBundle\\' => 18,
             'Composer\\' => 9,
+            'ClarkWinkelmann\\AnonymousPosting\\' => 33,
             'Carbon\\Doctrine\\' => 16,
             'Carbon\\' => 7,
         ),
@@ -355,6 +357,10 @@ class ComposerStaticInit48252e6b695eb395ae67d3d5216183d4
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
             0 => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src',
+        ),
+        'TheTurk\\Flamoji\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/the-turk/flarum-flamoji/src',
         ),
         'Symfony\\Polyfill\\Php81\\' => 
         array (
@@ -518,8 +524,8 @@ class ComposerStaticInit48252e6b695eb395ae67d3d5216183d4
         ),
         'Psr\\Http\\Server\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-server-middleware/src',
-            1 => __DIR__ . '/..' . '/psr/http-server-handler/src',
+            0 => __DIR__ . '/..' . '/psr/http-server-handler/src',
+            1 => __DIR__ . '/..' . '/psr/http-server-middleware/src',
         ),
         'Psr\\Http\\Message\\' => 
         array (
@@ -564,9 +570,9 @@ class ComposerStaticInit48252e6b695eb395ae67d3d5216183d4
         ),
         'Middlewares\\' => 
         array (
-            0 => __DIR__ . '/..' . '/middlewares/request-handler/src',
+            0 => __DIR__ . '/..' . '/middlewares/base-path/src',
             1 => __DIR__ . '/..' . '/middlewares/base-path-router/src',
-            2 => __DIR__ . '/..' . '/middlewares/base-path/src',
+            2 => __DIR__ . '/..' . '/middlewares/request-handler/src',
         ),
         'MatthiasMullie\\PathConverter\\' => 
         array (
@@ -655,9 +661,9 @@ class ComposerStaticInit48252e6b695eb395ae67d3d5216183d4
         ),
         'Illuminate\\Support\\' => 
         array (
-            0 => __DIR__ . '/..' . '/illuminate/support',
-            1 => __DIR__ . '/..' . '/illuminate/collections',
-            2 => __DIR__ . '/..' . '/illuminate/macroable',
+            0 => __DIR__ . '/..' . '/illuminate/collections',
+            1 => __DIR__ . '/..' . '/illuminate/macroable',
+            2 => __DIR__ . '/..' . '/illuminate/support',
         ),
         'Illuminate\\Session\\' => 
         array (
@@ -934,6 +940,10 @@ class ComposerStaticInit48252e6b695eb395ae67d3d5216183d4
         'Composer\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/composer/src/Composer',
+        ),
+        'ClarkWinkelmann\\AnonymousPosting\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/clarkwinkelmann/flarum-ext-anonymous-posting/src',
         ),
         'Carbon\\Doctrine\\' => 
         array (

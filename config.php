@@ -3,7 +3,7 @@
   'database' =>
   array(
     'driver' => 'mysql',
-    'host' => '103.81.85.224',
+    'host' => 'localhost',
     'port' => 3306,
     'database' => 'cbh-forum',
     'username' => 'cbh-forum',
@@ -15,7 +15,7 @@
     'engine' => 'InnoDB',
     'prefix_indexes' => true,
   ),
-  'url' => 'https://cyo-flarum.net',
+  'url' => 'https://beta.chuyenbienhoa.com',
   'paths' =>
   array(
     'api' => 'api',

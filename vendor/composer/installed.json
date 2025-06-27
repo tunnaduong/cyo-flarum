@@ -248,6 +248,76 @@
             "install-path": "../carbonphp/carbon-doctrine-types"
         },
         {
+            "name": "clarkwinkelmann/flarum-ext-anonymous-posting",
+            "version": "1.1.1",
+            "version_normalized": "1.1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clarkwinkelmann/flarum-ext-anonymous-posting.git",
+                "reference": "6a1c6bfc5251c8e66dc0943b48bb33df5755ce81"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clarkwinkelmann/flarum-ext-anonymous-posting/zipball/6a1c6bfc5251c8e66dc0943b48bb33df5755ce81",
+                "reference": "6a1c6bfc5251c8e66dc0943b48bb33df5755ce81",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "flarum/core": "^1.2",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "flarum/mentions": "*"
+            },
+            "time": "2023-03-09T18:14:17+00:00",
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "icon": {
+                        "name": "fas fa-user-secret",
+                        "color": "#fff",
+                        "backgroundColor": "#684ba6"
+                    },
+                    "title": "Anonymous Posting",
+                    "category": "feature",
+                    "optional-dependencies": [
+                        "flarum/mentions",
+                        "kilowhat/flarum-ext-formulaire"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ClarkWinkelmann\\AnonymousPosting\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Clark Winkelmann",
+                    "email": "clark.winkelmann@gmail.com",
+                    "homepage": "https://clarkwinkelmann.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Anonymous discussions and replies for logged in users",
+            "keywords": [
+                "anonymous",
+                "flarum"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/31151",
+                "issues": "https://github.com/clarkwinkelmann/flarum-ext-anonymous-posting/issues",
+                "source": "https://github.com/clarkwinkelmann/flarum-ext-anonymous-posting"
+            },
+            "install-path": "../clarkwinkelmann/flarum-ext-anonymous-posting"
+        },
+        {
             "name": "components/font-awesome",
             "version": "5.15.4",
             "version_normalized": "5.15.4.0",
@@ -13214,6 +13284,69 @@
                 }
             ],
             "install-path": "../symplify/vendor-patches"
+        },
+        {
+            "name": "the-turk/flarum-flamoji",
+            "version": "1.0.4",
+            "version_normalized": "1.0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/the-turk/flarum-flamoji.git",
+                "reference": "1c9a886cdcac0a997f4351a4ae64c1c8aa0dbcc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/the-turk/flarum-flamoji/zipball/1c9a886cdcac0a997f4351a4ae64c1c8aa0dbcc2",
+                "reference": "1c9a886cdcac0a997f4351a4ae64c1c8aa0dbcc2",
+                "shasum": ""
+            },
+            "require": {
+                "flarum/core": "^1.0.2"
+            },
+            "conflict": {
+                "clarkwinkelmann/flarum-ext-emojionearea": "*"
+            },
+            "time": "2022-04-04T21:00:03+00:00",
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "icon": {
+                        "name": "far fa-smile-wink",
+                        "color": "#fff",
+                        "backgroundColor": "#b72a2a"
+                    },
+                    "title": "Flamoji",
+                    "category": "feature"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "TheTurk\\Flamoji\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hasan Özbey",
+                    "email": "hasanoozbey@gmail.com",
+                    "homepage": "https://github.com/the-turk"
+                }
+            ],
+            "description": "Simple emoji manager for Flarum.",
+            "keywords": [
+                "emoji",
+                "flarum",
+                "picker"
+            ],
+            "support": {
+                "issues": "https://github.com/the-turk/flarum-flamoji/issues",
+                "source": "https://github.com/the-turk/flarum-flamoji"
+            },
+            "install-path": "../the-turk/flarum-flamoji"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

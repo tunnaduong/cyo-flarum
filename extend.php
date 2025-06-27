@@ -4,12 +4,12 @@ use Flarum\Extend;
 use Flarum\Frontend\Document;
 
 return [
-    // new Blomstra\Redis\Extend\Redis([
-    //     'host' => '103.81.85.224',
-    //     'password' => "tunganh2003",
-    //     'port' => 6379,
-    //     'database' => 0,
-    // ]),
+    new Blomstra\Redis\Extend\Redis([
+        'host' => 'localhost',
+        'password' => "tunganh2003",
+        'port' => 6379,
+        'database' => 0,
+    ]),
     // Inject footer vào trang forum
     (new Extend\Frontend('forum'))
         ->content(function (Document $document) {
@@ -31,7 +31,7 @@ return [
 
     <div class="container pt-7">
         <div>
-            <div class="w-[50%] absolute h-full mb-4 top-0 right-0 -z-10 footer-bg" style="background-image: url('/assets/images/footer.jpg'); background-size: cover; background-position: center;">
+            <div class="w-[50%] absolute h-full mb-4 top-0 right-0 -z-10 footer-bg" style="background-image: url('/assets/footer.jpg'); background-size: cover; background-position: center;">
             </div>
             <div class="fade-to-left" style="width: 50%"></div>
         </div>

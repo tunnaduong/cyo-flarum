@@ -22,6 +22,7 @@
     },
     "require": {
         "blomstra/flarum-redis": "*",
+        "clarkwinkelmann/flarum-ext-anonymous-posting": "^1.1",
         "cweagans/composer-patches": "^1.7",
         "datlechin/flarum-birthdays": "*",
         "datlechin/flarum-chatgpt": "*",
@@ -54,6 +55,7 @@
         "fof/upload": "^1.8",
         "ianm/follow-users": "*",
         "ianm/level-ranks": "*",
+        "the-turk/flarum-flamoji": "^1.0",
         "v17development/flarum-user-badges": "^1.1",
         "xelson/flarum-ext-chat": "^1.1"
     },

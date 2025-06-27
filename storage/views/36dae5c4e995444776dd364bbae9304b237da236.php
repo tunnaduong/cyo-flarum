@@ -1,0 +1,2 @@
+<img class="FoFUpload--Upl-Image-Preview" src="{@url}" title="{@title}" alt="{@alt}" data-id="{@uuid}" loading="lazy"/>
+<?php /**PATH /www/wwwroot/beta.chuyenbienhoa.com/vendor/fof/upload/resources/templates/image-preview.blade.php ENDPATH**/ ?>
