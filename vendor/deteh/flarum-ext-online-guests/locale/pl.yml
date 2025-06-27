@@ -1,0 +1,14 @@
+deteh-online-guests:
+  admin:
+    permissions:
+      view_online_guests_label: "Wyświetl ilość gości"
+    settings:
+      online_duration_label: "Wyświetlenia w ciągu ostatnich (minut)"
+      cache_duration_label: "Długoś cache (minut)"
+
+  forum:
+    widget:
+      title: Ilość Gości
+      description: Pokaż liczbę gości przeglądających forum (oparte o wyświetlenia tematów)
+      guests_online: "{count, plural, one {gość online} other {gości online}}"
+

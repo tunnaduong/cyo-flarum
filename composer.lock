@@ -4,8 +4,317 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "790d2e3a60be9360eb8cd05160f81152",
+    "content-hash": "b3d9f1e51c683fc363d037a4fb14ea11",
     "packages": [
+        {
+            "name": "acpl/flarum-lscache",
+            "version": "v3.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/android-com-pl/flarum-lscache.git",
+                "reference": "5210f50bc0dbb0d5262cd76582e6754d2564a5d0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/android-com-pl/flarum-lscache/zipball/5210f50bc0dbb0d5262cd76582e6754d2564a5d0",
+                "reference": "5210f50bc0dbb0d5262cd76582e6754d2564a5d0",
+                "shasum": ""
+            },
+            "require": {
+                "flarum/core": "^1.8",
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "clarkwinkelmann/flarum-ext-author-change": "^1.0",
+                "flarum/approval": "^1.8",
+                "flarum/likes": "^1.8",
+                "flarum/phpstan": "^1.8",
+                "flarum/tags": "^1.8",
+                "fof/masquerade": "^2.1",
+                "fof/merge-discussions": "^1.4",
+                "sycho/flarum-move-posts": "^0.1.7",
+                "v17development/flarum-blog": "^v0.8.0"
+            },
+            "suggest": {
+                "fof/redis": "This library allows using Redis as cache, session and for the queue. https://github.com/FriendsOfFlarum/redis?tab=readme-ov-file#set-up"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-cli": {
+                    "modules": {
+                        "js": true,
+                        "css": false,
+                        "admin": true,
+                        "forum": true,
+                        "gitConf": true,
+                        "styleci": true,
+                        "jsCommon": false,
+                        "prettier": true,
+                        "typescript": true,
+                        "bundlewatch": false,
+                        "editorConfig": true,
+                        "githubActions": true,
+                        "backendTesting": false
+                    }
+                },
+                "flarum-extension": {
+                    "icon": {
+                        "name": "fas fa-bolt",
+                        "color": "#fff",
+                        "backgroundColor": "#2b82d9"
+                    },
+                    "title": "LiteSpeed Cache",
+                    "category": "feature",
+                    "optional-dependencies": [
+                        "flarum/approval",
+                        "flarum/tags",
+                        "flarum/likes",
+                        "fof/masquerade",
+                        "v17development/flarum-blog",
+                        "clarkwinkelmann/flarum-ext-author-change",
+                        "sycho/flarum-move-posts"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ACPL\\FlarumLSCache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Rafał Całka",
+                    "homepage": "https://github.com/rafaucau",
+                    "role": "Developer"
+                }
+            ],
+            "description": "LSCache implementation for Flarum.",
+            "keywords": [
+                "LSCache",
+                "cache",
+                "flarum",
+                "litespeed"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/29475-litespeed-cache-for-flarum",
+                "issues": "https://github.com/android-com-pl/flarum-lscache/issues",
+                "source": "https://github.com/android-com-pl/flarum-lscache"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/android-com-pl/flarum-lscache?sponsor=1",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-02-19T12:48:16+00:00"
+        },
+        {
+            "name": "afrux/forum-widgets-core",
+            "version": "v0.1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/afrux/forum-widgets-core.git",
+                "reference": "32305870b2bf74dd70e4b8908db9ea07efbb52a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/afrux/forum-widgets-core/zipball/32305870b2bf74dd70e4b8908db9ea07efbb52a3",
+                "reference": "32305870b2bf74dd70e4b8908db9ea07efbb52a3",
+                "shasum": ""
+            },
+            "require": {
+                "flarum/core": "^1.0.0"
+            },
+            "require-dev": {
+                "flarum/testing": "^1.0.0"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "0.1.x-dev"
+                },
+                "flarum-extension": {
+                    "icon": {
+                        "image": "icon.svg"
+                    },
+                    "title": "Forum Widgets",
+                    "category": ""
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Afrux\\ForumWidgets\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sami Mazouz",
+                    "email": "sychocouldy@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Core Extension for Managing Forum Widgets",
+            "homepage": "https://afrux.github.io",
+            "keywords": [
+                "core",
+                "flarum",
+                "framework",
+                "widgets"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/",
+                "issues": "https://github.com/afrux/forum-widgets-core/issues",
+                "source": "https://github.com/afrux/forum-widgets-core"
+            },
+            "funding": [
+                {
+                    "url": "https://www.buymeacoffee.com/sycho",
+                    "type": "other"
+                }
+            ],
+            "time": "2022-03-03T19:50:55+00:00"
+        },
+        {
+            "name": "afrux/online-users-widget",
+            "version": "v0.1.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/afrux/online-users-widget.git",
+                "reference": "b2ecc545674452c44e07eec79de01c1d385db845"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/afrux/online-users-widget/zipball/b2ecc545674452c44e07eec79de01c1d385db845",
+                "reference": "b2ecc545674452c44e07eec79de01c1d385db845",
+                "shasum": ""
+            },
+            "require": {
+                "afrux/forum-widgets-core": "^0.1.7",
+                "flarum/core": "^1.0.0"
+            },
+            "require-dev": {
+                "flarum/testing": "^1.0.0"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "0.1.x-dev"
+                },
+                "flarum-extension": {
+                    "icon": {
+                        "name": "fas fa-user-friends",
+                        "color": "#fff",
+                        "backgroundColor": "#e34b6e"
+                    },
+                    "title": "Online Users Widget",
+                    "category": "forum-widget"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Afrux\\OnlineUsers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sami Mazouz",
+                    "email": "sychocouldy@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Forum Widget That Lists Online Users",
+            "homepage": "https://afrux.github.io",
+            "keywords": [
+                "Users",
+                "flarum",
+                "online",
+                "widget"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/",
+                "issues": "https://github.com/afrux/online-users-widget/issues",
+                "source": "https://github.com/afrux/online-users-widget"
+            },
+            "funding": [
+                {
+                    "url": "https://www.buymeacoffee.com/sycho",
+                    "type": "other"
+                }
+            ],
+            "time": "2025-01-13T20:31:56+00:00"
+        },
+        {
+            "name": "askvortsov/flarum-categories",
+            "version": "v3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/askvortsov1/flarum-categories.git",
+                "reference": "28e4bb24a3c986d3d1d3f452ea23876c96aa893e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/askvortsov1/flarum-categories/zipball/28e4bb24a3c986d3d1d3f452ea23876c96aa893e",
+                "reference": "28e4bb24a3c986d3d1d3f452ea23876c96aa893e",
+                "shasum": ""
+            },
+            "require": {
+                "flarum/core": "^1.2.0",
+                "flarum/tags": "^1.2.0"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "icon": {
+                        "name": "fas fa-th-list",
+                        "color": "#fff",
+                        "backgroundColor": "#6932D1"
+                    },
+                    "title": "Categories",
+                    "category": "theme"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Askvortsov\\FlarumCategories\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Skvortsov",
+                    "email": "askvortsov@flarum.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Traditional Category Layout for Flarum",
+            "keywords": [
+                "flarum"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/23184-flarum-categories",
+                "issues": "https://github.com/askvortsov1/flarum-categories/issues",
+                "source": "https://github.com/askvortsov1/flarum-categories"
+            },
+            "time": "2024-04-14T15:45:38+00:00"
+        },
         {
             "name": "axy/backtrace",
             "version": "2.0.0",
@@ -1564,6 +1873,84 @@
                 "source": "https://github.com/datlechin/flarum-traditional-rank-icons"
             },
             "time": "2022-08-29T16:04:13+00:00"
+        },
+        {
+            "name": "deteh/flarum-ext-online-guests",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/deteh/flarum-ext-online-guests.git",
+                "reference": "51adada3ba985cf589635a288524495d5b656421"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/deteh/flarum-ext-online-guests/zipball/51adada3ba985cf589635a288524495d5b656421",
+                "reference": "51adada3ba985cf589635a288524495d5b656421",
+                "shasum": ""
+            },
+            "require": {
+                "afrux/forum-widgets-core": "^0.1.7",
+                "flarum/core": "^1.2.0",
+                "michaelbelgium/flarum-discussion-views": "^7.1"
+            },
+            "require-dev": {
+                "flarum/testing": "^1.0.0"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-cli": {
+                    "modules": {
+                        "js": true,
+                        "css": true,
+                        "admin": true,
+                        "forum": true,
+                        "locale": true,
+                        "gitConf": true,
+                        "styleci": true,
+                        "jsCommon": true,
+                        "prettier": true,
+                        "typescript": true,
+                        "bundlewatch": false,
+                        "editorConfig": true,
+                        "githubActions": true,
+                        "backendTesting": true
+                    }
+                },
+                "flarum-extension": {
+                    "icon": {
+                        "name": "fas fa-users",
+                        "color": "#fff",
+                        "backgroundColor": "#7a3803"
+                    },
+                    "title": "Online Guests Widget",
+                    "category": "forum-widget"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "deteh\\OnlineGuests\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "deteh",
+                    "email": "code@deteh.pl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Display the number of guests browsing your forum",
+            "keywords": [
+                "flarum"
+            ],
+            "support": {
+                "issues": "https://github.com/deteh/flarum-ext-online-guests/issues",
+                "source": "https://github.com/deteh/flarum-ext-online-guests/tree/1.0.1"
+            },
+            "time": "2023-12-01T18:40:14+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -4513,6 +4900,365 @@
             "time": "2024-10-19T10:06:15+00:00"
         },
         {
+            "name": "fof/oauth",
+            "version": "1.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/oauth.git",
+                "reference": "9744e49b21184cbdce57f4b0e389412bb855191a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/oauth/zipball/9744e49b21184cbdce57f4b0e389412bb855191a",
+                "reference": "9744e49b21184cbdce57f4b0e389412bb855191a",
+                "shasum": ""
+            },
+            "require": {
+                "flarum/core": "^1.8.1",
+                "fof/extend": "^1.3.3",
+                "league/oauth1-client": "^1.10.1",
+                "league/oauth2-facebook": "^2.2.0",
+                "league/oauth2-github": "^3.1.0",
+                "league/oauth2-google": "^4.0.1",
+                "omines/oauth2-gitlab": "^3.3.0",
+                "php": "^7.4 || ^8.0",
+                "wohali/oauth2-discord-new": "^1.2.1"
+            },
+            "replace": {
+                "flarum/auth-facebook": "*",
+                "flarum/auth-github": "*",
+                "flarum/auth-twitter": "*",
+                "fof/auth-discord": "*",
+                "fof/auth-gitlab": "*",
+                "luuhai48/oauth-google": "*",
+                "luuhai48/oauth-linkedin": "*"
+            },
+            "require-dev": {
+                "flarum/phpstan": "*",
+                "flarum/testing": "^1.0.0"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/25182"
+                },
+                "flarum-cli": {
+                    "modules": {
+                        "githubActions": true,
+                        "backendTesting": true
+                    }
+                },
+                "flarum-extension": {
+                    "icon": {
+                        "name": "fas fa-sign-in-alt",
+                        "color": "#fff",
+                        "backgroundColor": "#e74c3c"
+                    },
+                    "title": "FoF OAuth",
+                    "category": "feature",
+                    "optional-dependencies": [
+                        "flarum/gdpr"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FoF\\OAuth\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Sevilla Martin",
+                    "email": "me+fof@datitisev.me",
+                    "role": "Developer"
+                },
+                {
+                    "name": "IanM",
+                    "email": "ian@flarum.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Allow users to log in with GitHub, Twitter, Facebook, Google, and more!",
+            "homepage": "https://friendsofflarum.org",
+            "keywords": [
+                "discord",
+                "facebook",
+                "flarum",
+                "friendsofflarum",
+                "github",
+                "gitlab",
+                "google",
+                "linkedin",
+                "oauth",
+                "twitter"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/25182",
+                "issues": "https://github.com/FriendsOfFlarum/oauth/issues",
+                "source": "https://github.com/FriendsOfFlarum/oauth"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof/donate",
+                    "type": "website"
+                }
+            ],
+            "time": "2025-04-22T09:26:18+00:00"
+        },
+        {
+            "name": "fof/pretty-mail",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/pretty-mail.git",
+                "reference": "5440ba9224446d6b478639a4407c661e3d4dbd46"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/pretty-mail/zipball/5440ba9224446d6b478639a4407c661e3d4dbd46",
+                "reference": "5440ba9224446d6b478639a4407c661e3d4dbd46",
+                "shasum": ""
+            },
+            "require": {
+                "flarum/core": "^1.5.0"
+            },
+            "replace": {
+                "reflar/pretty-mail": "*"
+            },
+            "require-dev": {
+                "flarum/phpstan": "*"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/11178"
+                },
+                "flarum-cli": {
+                    "modules": {
+                        "githubActions": true
+                    }
+                },
+                "flarum-extension": {
+                    "icon": {
+                        "name": "fas fa-envelope-open",
+                        "color": "#fff",
+                        "backgroundColor": "#e74c3c"
+                    },
+                    "title": "FoF Pretty Mail",
+                    "category": "feature"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FoF\\PrettyMail\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "FoF Team",
+                    "email": "team@friendsofflarum.org",
+                    "role": "developer"
+                }
+            ],
+            "description": "Create HTML email for Flarum",
+            "homepage": "https://friendsofflarum.org",
+            "keywords": [
+                "extension",
+                "flarum",
+                "mail"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/11178",
+                "issues": "https://github.com/FriendsOfFlarum/pretty-mail/issues",
+                "source": "https://github.com/FriendsOfFlarum/pretty-mail"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof/donate",
+                    "type": "website"
+                }
+            ],
+            "time": "2023-11-12T16:56:33+00:00"
+        },
+        {
+            "name": "fof/reactions",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/reactions.git",
+                "reference": "87a09add9aeae75cb2ae7eda29f5d74ad271c1c4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/reactions/zipball/87a09add9aeae75cb2ae7eda29f5d74ad271c1c4",
+                "reference": "87a09add9aeae75cb2ae7eda29f5d74ad271c1c4",
+                "shasum": ""
+            },
+            "require": {
+                "flarum/core": "^1.2.0",
+                "php": "^7.4 | ^8.0"
+            },
+            "replace": {
+                "reflar/reactions": "*"
+            },
+            "require-dev": {
+                "flarum/likes": "*",
+                "flarum/phpstan": "*",
+                "flarum/testing": "^1.0.0",
+                "fof/gamification": "*"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/20655"
+                },
+                "flarum-cli": {
+                    "modules": {
+                        "githubActions": true,
+                        "backendTesting": true
+                    }
+                },
+                "flarum-extension": {
+                    "icon": {
+                        "name": "far fa-smile",
+                        "color": "#fff",
+                        "backgroundColor": "#e74c3c"
+                    },
+                    "title": "FoF Reactions",
+                    "category": "feature"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FoF\\Reactions\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Sevilla Martín",
+                    "email": "me+reflar@datitisev.me",
+                    "homepage": "https://datitisev.me",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Charlie K",
+                    "email": "issyrocks12@reflar.email",
+                    "homepage": "https://redevs.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Reactions for Flarum",
+            "homepage": "https://friendsofflarum.org",
+            "keywords": [
+                "Settings",
+                "flarum",
+                "misc",
+                "reactions",
+                "reflar"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/20655",
+                "issues": "https://github.com/friendsofflarum/reactions/issues",
+                "source": "https://github.com/friendsofflarum/reactions"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof/donate",
+                    "type": "website"
+                }
+            ],
+            "time": "2024-02-11T21:51:01+00:00"
+        },
+        {
+            "name": "fof/socialprofile",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/socialprofile.git",
+                "reference": "18681e59a44d9a7b99251edf85c4b8dad93c71d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/socialprofile/zipball/18681e59a44d9a7b99251edf85c4b8dad93c71d2",
+                "reference": "18681e59a44d9a7b99251edf85c4b8dad93c71d2",
+                "shasum": ""
+            },
+            "require": {
+                "flarum/core": "^1.3.1"
+            },
+            "replace": {
+                "davis/flarum-ext-socialprofile": "*"
+            },
+            "require-dev": {
+                "flarum/phpstan": "*"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/18775"
+                },
+                "flarum-cli": {
+                    "modules": {
+                        "githubActions": true
+                    }
+                },
+                "flarum-extension": {
+                    "icon": {
+                        "name": "fas fa-globe",
+                        "color": "#ffff",
+                        "backgroundColor": "#e74c3c"
+                    },
+                    "title": "FoF Social Profile",
+                    "category": "feature"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FoF\\SocialProfile\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Sevilla Martín",
+                    "email": "david.s@redevs.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Add custom social media pages to your user profile",
+            "homepage": "https://friendsofflarum.org",
+            "keywords": [
+                "flarum"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/18775",
+                "issues": "https://github.com/FriendsOfFlarum/socialprofile/issues",
+                "source": "https://github.com/FriendsOfFlarum/socialprofile"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof/donate",
+                    "type": "website"
+                }
+            ],
+            "time": "2025-04-06T15:14:17+00:00"
+        },
+        {
             "name": "fof/upload",
             "version": "1.8.3",
             "source": {
@@ -4610,6 +5356,96 @@
                 }
             ],
             "time": "2025-04-05T20:14:35+00:00"
+        },
+        {
+            "name": "fof/user-bio",
+            "version": "1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/user-bio.git",
+                "reference": "f30b87260bfdf9b9eb0bbfbf351d91c6923dc9b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/user-bio/zipball/f30b87260bfdf9b9eb0bbfbf351d91c6923dc9b9",
+                "reference": "f30b87260bfdf9b9eb0bbfbf351d91c6923dc9b9",
+                "shasum": ""
+            },
+            "require": {
+                "flarum/core": "^1.2.0"
+            },
+            "require-dev": {
+                "flarum/bbcode": "*",
+                "flarum/gdpr": "dev-main",
+                "flarum/phpstan": "*",
+                "flarum/suspend": "*",
+                "flarum/testing": "^1.0.0"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/17775"
+                },
+                "flarum-cli": {
+                    "modules": {
+                        "githubActions": true,
+                        "backendTesting": true
+                    }
+                },
+                "flarum-extension": {
+                    "icon": {
+                        "name": "fas fa-pen",
+                        "color": "#fff",
+                        "backgroundColor": "#e74c3c"
+                    },
+                    "title": "FoF User Bio",
+                    "category": "feature",
+                    "optional-dependencies": [
+                        "flarum/suspend",
+                        "flarum/gdpr"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FoF\\UserBio\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Charlie K",
+                    "email": "charlie.k@redevs.org",
+                    "homepage": "https://redevs.org",
+                    "role": "Developer"
+                },
+                {
+                    "name": "IanM",
+                    "email": "ian@flarum.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Add a user bio to user profiles",
+            "homepage": "https://friendsofflarum.org",
+            "keywords": [
+                "Friends of Flarum",
+                "flarum"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/17775",
+                "issues": "https://github.com/FriendsOfFlarum/user-bio/issues",
+                "source": "https://github.com/FriendsOfFlarum/user-bio"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof/donate",
+                    "type": "website"
+                }
+            ],
+            "time": "2024-11-03T17:06:22+00:00"
         },
         {
             "name": "franzl/whoops-middleware",
@@ -7305,6 +8141,324 @@
             "time": "2024-09-21T08:32:55+00:00"
         },
         {
+            "name": "league/oauth1-client",
+            "version": "v1.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/oauth1-client.git",
+                "reference": "f9c94b088837eb1aae1ad7c4f23eb65cc6993055"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/f9c94b088837eb1aae1ad7c4f23eb65cc6993055",
+                "reference": "f9c94b088837eb1aae1ad7c4f23eb65cc6993055",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-openssl": "*",
+                "guzzlehttp/guzzle": "^6.0|^7.0",
+                "guzzlehttp/psr7": "^1.7|^2.0",
+                "php": ">=7.1||>=8.0"
+            },
+            "require-dev": {
+                "ext-simplexml": "*",
+                "friendsofphp/php-cs-fixer": "^2.17",
+                "mockery/mockery": "^1.3.3",
+                "phpstan/phpstan": "^0.12.42",
+                "phpunit/phpunit": "^7.5||9.5"
+            },
+            "suggest": {
+                "ext-simplexml": "For decoding XML-based responses."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev",
+                    "dev-develop": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\OAuth1\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Corlett",
+                    "email": "bencorlett@me.com",
+                    "homepage": "http://www.webcomm.com.au",
+                    "role": "Developer"
+                }
+            ],
+            "description": "OAuth 1.0 Client Library",
+            "keywords": [
+                "Authentication",
+                "SSO",
+                "authorization",
+                "bitbucket",
+                "identity",
+                "idp",
+                "oauth",
+                "oauth1",
+                "single sign on",
+                "trello",
+                "tumblr",
+                "twitter"
+            ],
+            "support": {
+                "issues": "https://github.com/thephpleague/oauth1-client/issues",
+                "source": "https://github.com/thephpleague/oauth1-client/tree/v1.11.0"
+            },
+            "time": "2024-12-10T19:59:05+00:00"
+        },
+        {
+            "name": "league/oauth2-client",
+            "version": "2.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/oauth2-client.git",
+                "reference": "9df2924ca644736c835fc60466a3a60390d334f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/9df2924ca644736c835fc60466a3a60390d334f9",
+                "reference": "9df2924ca644736c835fc60466a3a60390d334f9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^6.5.8 || ^7.4.5",
+                "php": "^7.1 || >=8.0.0 <8.5.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3.5",
+                "php-parallel-lint/php-parallel-lint": "^1.4",
+                "phpunit/phpunit": "^7 || ^8 || ^9 || ^10 || ^11",
+                "squizlabs/php_codesniffer": "^3.11"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\OAuth2\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Bilbie",
+                    "email": "hello@alexbilbie.com",
+                    "homepage": "http://www.alexbilbie.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Woody Gilk",
+                    "homepage": "https://github.com/shadowhand",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "OAuth 2.0 Client Library",
+            "keywords": [
+                "Authentication",
+                "SSO",
+                "authorization",
+                "identity",
+                "idp",
+                "oauth",
+                "oauth2",
+                "single sign on"
+            ],
+            "support": {
+                "issues": "https://github.com/thephpleague/oauth2-client/issues",
+                "source": "https://github.com/thephpleague/oauth2-client/tree/2.8.1"
+            },
+            "time": "2025-02-26T04:37:30+00:00"
+        },
+        {
+            "name": "league/oauth2-facebook",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/oauth2-facebook.git",
+                "reference": "ec6d62a00b548c6cd56d7b734346b9e6befbfbbb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-facebook/zipball/ec6d62a00b548c6cd56d7b734346b9e6befbfbbb",
+                "reference": "ec6d62a00b548c6cd56d7b734346b9e6befbfbbb",
+                "shasum": ""
+            },
+            "require": {
+                "league/oauth2-client": "^2.0",
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "mockery/mockery": "~1.3.0",
+                "phpunit/phpunit": "^9.4",
+                "squizlabs/php_codesniffer": "~3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\OAuth2\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sammy Kaye Powers",
+                    "email": "me@sammyk.me",
+                    "homepage": "http://www.sammyk.me"
+                }
+            ],
+            "description": "Facebook OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+            "keywords": [
+                "Authentication",
+                "authorization",
+                "client",
+                "facebook",
+                "oauth",
+                "oauth2"
+            ],
+            "support": {
+                "issues": "https://github.com/thephpleague/oauth2-facebook/issues",
+                "source": "https://github.com/thephpleague/oauth2-facebook/tree/2.2.0"
+            },
+            "time": "2022-02-24T18:45:07+00:00"
+        },
+        {
+            "name": "league/oauth2-github",
+            "version": "3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/oauth2-github.git",
+                "reference": "84211f62b757f7266fe605a0aa874a32f52c24fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-github/zipball/84211f62b757f7266fe605a0aa874a32f52c24fd",
+                "reference": "84211f62b757f7266fe605a0aa874a32f52c24fd",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "league/oauth2-client": "^2.0",
+                "php": "^7.3 || ^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.4",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "^3.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\OAuth2\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steven Maguire",
+                    "email": "stevenmaguire@gmail.com",
+                    "homepage": "https://github.com/stevenmaguire"
+                },
+                {
+                    "name": "Woody Gilk",
+                    "email": "woody.gilk@gmail.com",
+                    "homepage": "https://github.com/shadowhand"
+                }
+            ],
+            "description": "Github OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+            "keywords": [
+                "authorisation",
+                "authorization",
+                "client",
+                "github",
+                "oauth",
+                "oauth2"
+            ],
+            "support": {
+                "issues": "https://github.com/thephpleague/oauth2-github/issues",
+                "source": "https://github.com/thephpleague/oauth2-github/tree/3.1.1"
+            },
+            "time": "2024-09-03T10:42:10+00:00"
+        },
+        {
+            "name": "league/oauth2-google",
+            "version": "4.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/oauth2-google.git",
+                "reference": "1b01ba18ba31b29e88771e3e0979e5c91d4afe76"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-google/zipball/1b01ba18ba31b29e88771e3e0979e5c91d4afe76",
+                "reference": "1b01ba18ba31b29e88771e3e0979e5c91d4afe76",
+                "shasum": ""
+            },
+            "require": {
+                "league/oauth2-client": "^2.0",
+                "php": "^7.3 || ^8.0"
+            },
+            "require-dev": {
+                "eloquent/phony-phpunit": "^6.0 || ^7.1",
+                "phpunit/phpunit": "^8.0 || ^9.0",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\OAuth2\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Woody Gilk",
+                    "email": "hello@shadowhand.com",
+                    "homepage": "https://shadowhand.com"
+                }
+            ],
+            "description": "Google OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+            "keywords": [
+                "Authentication",
+                "authorization",
+                "client",
+                "google",
+                "oauth",
+                "oauth2"
+            ],
+            "support": {
+                "issues": "https://github.com/thephpleague/oauth2-google/issues",
+                "source": "https://github.com/thephpleague/oauth2-google/tree/4.0.1"
+            },
+            "time": "2023-03-17T15:20:52+00:00"
+        },
+        {
             "name": "league/uri",
             "version": "7.5.1",
             "source": {
@@ -7740,6 +8894,132 @@
                 "source": "https://github.com/matthiasmullie/path-converter/tree/1.1.3"
             },
             "time": "2019-02-05T23:41:09+00:00"
+        },
+        {
+            "name": "michaelbelgium/flarum-discussion-views",
+            "version": "v7.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MichaelBelgium/flarum-discussion-views.git",
+                "reference": "a2ded1acc64d3782dd0bd7d43325f31de56178dc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MichaelBelgium/flarum-discussion-views/zipball/a2ded1acc64d3782dd0bd7d43325f31de56178dc",
+                "reference": "a2ded1acc64d3782dd0bd7d43325f31de56178dc",
+                "shasum": ""
+            },
+            "require": {
+                "flarum/core": "^1.0",
+                "jaybizzle/crawler-detect": "^1.2"
+            },
+            "conflict": {
+                "flarumite/simple-discussion-views": "*"
+            },
+            "require-dev": {
+                "fof/merge-discussions": "^1.0"
+            },
+            "suggest": {
+                "flarum-lang/dutch": "Includes Dutch translation for this extension",
+                "flarum-lang/french": "Includes French translation for this extension",
+                "flarum-lang/polish": "Includes Polish translation for this extension"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/26269"
+                },
+                "flarum-extension": {
+                    "icon": {
+                        "name": "far fa-eye",
+                        "color": "#fff",
+                        "backgroundColor": "#88CC23"
+                    },
+                    "title": "Discussion views",
+                    "optional-dependencies": [
+                        "fof/merge-discussions"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Michaelbelgium\\Discussionviews\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael V.",
+                    "email": "michael@michaelbelgium.me"
+                }
+            ],
+            "description": "Add views to flarum discussions",
+            "support": {
+                "forum": "https://discuss.flarum.org/d/26269",
+                "issues": "https://github.com/MichaelBelgium/flarum-discussion-views/issues",
+                "source": "https://github.com/MichaelBelgium/flarum-discussion-views"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/MichaelBelgium",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-07-19T12:08:05+00:00"
+        },
+        {
+            "name": "mickmelon/flarum-ext-coloured-usernames",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MickMelon/flarum-ext-coloured-usernames.git",
+                "reference": "151f238d824c87afbc18eb8b38f7bffa4e68ce84"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MickMelon/flarum-ext-coloured-usernames/zipball/151f238d824c87afbc18eb8b38f7bffa4e68ce84",
+                "reference": "151f238d824c87afbc18eb8b38f7bffa4e68ce84",
+                "shasum": ""
+            },
+            "require": {
+                "flarum/core": "^1.0.4"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "icon": {
+                        "name": "fas fa-user",
+                        "color": "#fff",
+                        "backgroundColor": "#1d70b8"
+                    },
+                    "title": "Coloured Usernames"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "MickMelon",
+                    "homepage": "https://github.com/mickmelon/"
+                }
+            ],
+            "description": "Set the username colour to the same as the rank colour (only on posts)",
+            "keywords": [
+                "design",
+                "extension",
+                "flarum",
+                "groups"
+            ],
+            "support": {
+                "issues": "https://github.com/mickmelon/flarum-ext-coloured-usernames/issues",
+                "source": "https://github.com/mickmelon/flarum-ext-coloured-usernames"
+            },
+            "time": "2021-07-20T19:34:35+00:00"
         },
         {
             "name": "middlewares/base-path",
@@ -8414,6 +9694,80 @@
                 "source": "https://github.com/nikic/FastRoute/tree/master"
             },
             "time": "2015-06-18T19:15:47+00:00"
+        },
+        {
+            "name": "omines/oauth2-gitlab",
+            "version": "3.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/omines/oauth2-gitlab.git",
+                "reference": "3dee862326d999b0517da4dd83b169e08f5ddf0a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/omines/oauth2-gitlab/zipball/3dee862326d999b0517da4dd83b169e08f5ddf0a",
+                "reference": "3dee862326d999b0517da4dd83b169e08f5ddf0a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-intl": "*",
+                "ext-mbstring": "*",
+                "league/oauth2-client": "^2.4.1",
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.65.0",
+                "guzzlehttp/psr7": "^2.7.0",
+                "http-interop/http-factory-guzzle": "^1.2",
+                "infection/infection": "^0.27.11",
+                "m4tthumphrey/php-gitlab-api": "^11.14",
+                "mockery/mockery": "^1.6.12",
+                "php-http/guzzle7-adapter": "^1.1.0",
+                "phpstan/extension-installer": "^1.4.3",
+                "phpstan/phpstan": "^2.0.4",
+                "phpstan/phpstan-mockery": "^2.0.0",
+                "phpstan/phpstan-phpunit": "^2.0.3",
+                "phpunit/phpunit": "^10.5.39"
+            },
+            "suggest": {
+                "m4tthumphrey/php-gitlab-api": "For further API usage using the acquired OAuth2 token"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Omines\\OAuth2\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Niels Keurentjes",
+                    "email": "niels.keurentjes@omines.com",
+                    "homepage": "https://www.omines.nl/"
+                }
+            ],
+            "description": "GitLab OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+            "keywords": [
+                "authorisation",
+                "authorization",
+                "client",
+                "gitlab",
+                "oauth",
+                "oauth2"
+            ],
+            "support": {
+                "issues": "https://github.com/omines/oauth2-gitlab/issues",
+                "source": "https://github.com/omines/oauth2-gitlab/tree/3.7.0"
+            },
+            "time": "2024-12-20T15:42:03+00:00"
         },
         {
             "name": "openai-php/client",
@@ -12830,6 +14184,67 @@
             "time": "2022-04-04T21:00:03+00:00"
         },
         {
+            "name": "therealsujitk/flarum-ext-gifs",
+            "version": "v4.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/therealsujitk/flarum-ext-gifs.git",
+                "reference": "d333a45ccdf82955c445e69d644da7bb26dd0397"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/therealsujitk/flarum-ext-gifs/zipball/d333a45ccdf82955c445e69d644da7bb26dd0397",
+                "reference": "d333a45ccdf82955c445e69d644da7bb26dd0397",
+                "shasum": ""
+            },
+            "require": {
+                "flarum/core": "^1.0",
+                "flarum/markdown": "^1.0"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "icon": {
+                        "image": "icon.svg",
+                        "backgroundSize": "cover",
+                        "backgroundColor": "#ff9c59",
+                        "backgroundPosition": "center"
+                    },
+                    "title": "GIFs",
+                    "category": "feature"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Therealsujitk\\GIFs\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sujit Kumar",
+                    "email": "me@therealsuji.tk",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Integrate your forum with GIF search engines.",
+            "homepage": "https://therealsuji.tk",
+            "keywords": [
+                "flarum",
+                "gif",
+                "giphy"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/23101",
+                "issues": "https://github.com/therealsujitk/flarum-ext-gifs/issues",
+                "source": "https://github.com/therealsujitk/flarum-ext-gifs"
+            },
+            "time": "2021-09-08T14:25:20+00:00"
+        },
+        {
             "name": "tijsverkoyen/css-to-inline-styles",
             "version": "v2.3.0",
             "source": {
@@ -13168,6 +14583,71 @@
                 "source": "https://github.com/wikimedia/less.php/tree/v3.2.1"
             },
             "time": "2023-02-03T06:43:41+00:00"
+        },
+        {
+            "name": "wohali/oauth2-discord-new",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wohali/oauth2-discord-new.git",
+                "reference": "2df4d2a882e04c749880797704e4bde8f00ea1d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wohali/oauth2-discord-new/zipball/2df4d2a882e04c749880797704e4bde8f00ea1d9",
+                "reference": "2df4d2a882e04c749880797704e4bde8f00ea1d9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "league/oauth2-client": "^2.0",
+                "php": "^7.2|^8.0"
+            },
+            "conflict": {
+                "team-reflex/oauth2-discord": ">=1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~1.3.0",
+                "php-parallel-lint/php-parallel-lint": "~0.9",
+                "phpunit/phpunit": "~8.0",
+                "squizlabs/php_codesniffer": "^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Wohali\\OAuth2\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joan Touzet",
+                    "email": "code@atypical.net",
+                    "homepage": "https://github.com/wohali"
+                }
+            ],
+            "description": "Discord OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+            "keywords": [
+                "authorisation",
+                "authorization",
+                "client",
+                "discord",
+                "oauth",
+                "oauth2"
+            ],
+            "support": {
+                "issues": "https://github.com/wohali/oauth2-discord-new/issues",
+                "source": "https://github.com/wohali/oauth2-discord-new/tree/1.2.1"
+            },
+            "time": "2022-12-29T18:45:10+00:00"
         },
         {
             "name": "xelson/flarum-ext-chat",
