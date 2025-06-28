@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c589c09869ba5b55f165c9bfd0fc95de",
+    "content-hash": "0b7df421dff5cc687da92bd79b20db79",
     "packages": [
         {
             "name": "acpl/flarum-lscache",
@@ -14522,6 +14522,66 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/v2.3.0"
             },
             "time": "2024-12-21T16:25:41+00:00"
+        },
+        {
+            "name": "tunnaduong/flarum-ext-user-points",
+            "version": "v0.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tunnaduong/flarum-ext-user-points.git",
+                "reference": "fda970d4fe0ca62c0426f89f205e7e0e832fda5e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tunnaduong/flarum-ext-user-points/zipball/fda970d4fe0ca62c0426f89f205e7e0e832fda5e",
+                "reference": "fda970d4fe0ca62c0426f89f205e7e0e832fda5e",
+                "shasum": ""
+            },
+            "require": {
+                "flarum/core": "^1.8",
+                "flarum/likes": "*",
+                "fof/reactions": "*"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "id": "tunnaduong-user-points",
+                    "icon": {
+                        "name": "fas fa-star",
+                        "color": "#fff",
+                        "backgroundColor": "#ffc107"
+                    },
+                    "title": "User Points"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tunna\\UserPoints\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tunna Duong",
+                    "email": "tunnaduong@gmail.com",
+                    "homepage": "https://github.com/tunnaduong"
+                }
+            ],
+            "keywords": [
+                "Gamification",
+                "flarum",
+                "points",
+                "ranking",
+                "user"
+            ],
+            "support": {
+                "issues": "https://github.com/tunnaduong/flarum-ext-user-points/issues",
+                "source": "https://github.com/tunnaduong/flarum-ext-user-points/tree/v0.1.6"
+            },
+            "time": "2025-06-28T06:54:16+00:00"
         },
         {
             "name": "v17development/flarum-user-badges",

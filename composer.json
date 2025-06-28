@@ -72,6 +72,7 @@
         "mickmelon/flarum-ext-coloured-usernames": "^0.1.1",
         "the-turk/flarum-flamoji": "^1.0",
         "therealsujitk/flarum-ext-gifs": "^4.1",
+        "tunnaduong/flarum-ext-user-points": "*",
         "v17development/flarum-user-badges": "^1.1",
         "xelson/flarum-ext-chat": "^1.1"
     },

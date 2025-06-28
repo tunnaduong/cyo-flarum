@@ -15176,6 +15176,69 @@
             "install-path": "../tijsverkoyen/css-to-inline-styles"
         },
         {
+            "name": "tunnaduong/flarum-ext-user-points",
+            "version": "v0.1.6",
+            "version_normalized": "0.1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tunnaduong/flarum-ext-user-points.git",
+                "reference": "fda970d4fe0ca62c0426f89f205e7e0e832fda5e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tunnaduong/flarum-ext-user-points/zipball/fda970d4fe0ca62c0426f89f205e7e0e832fda5e",
+                "reference": "fda970d4fe0ca62c0426f89f205e7e0e832fda5e",
+                "shasum": ""
+            },
+            "require": {
+                "flarum/core": "^1.8",
+                "flarum/likes": "*",
+                "fof/reactions": "*"
+            },
+            "time": "2025-06-28T06:54:16+00:00",
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "id": "tunnaduong-user-points",
+                    "icon": {
+                        "name": "fas fa-star",
+                        "color": "#fff",
+                        "backgroundColor": "#ffc107"
+                    },
+                    "title": "User Points"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Tunna\\UserPoints\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tunna Duong",
+                    "email": "tunnaduong@gmail.com",
+                    "homepage": "https://github.com/tunnaduong"
+                }
+            ],
+            "keywords": [
+                "Gamification",
+                "flarum",
+                "points",
+                "ranking",
+                "user"
+            ],
+            "support": {
+                "issues": "https://github.com/tunnaduong/flarum-ext-user-points/issues",
+                "source": "https://github.com/tunnaduong/flarum-ext-user-points/tree/v0.1.6"
+            },
+            "install-path": "../tunnaduong/flarum-ext-user-points"
+        },
+        {
             "name": "v17development/flarum-user-badges",
             "version": "v1.1.0",
             "version_normalized": "1.1.0.0",

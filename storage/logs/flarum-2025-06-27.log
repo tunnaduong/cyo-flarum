@@ -695,3 +695,4 @@ Stack trace:
 #54 /www/wwwroot/beta.chuyenbienhoa.com/vendor/flarum/core/src/Http/Server.php(45): Laminas\HttpHandlerRunner\RequestHandlerRunner->run()
 #55 /www/wwwroot/beta.chuyenbienhoa.com/public/index.php(26): Flarum\Http\Server->listen()
 #56 {main}  
+[2025-06-27 17:28:39] flarum.ERROR: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.  

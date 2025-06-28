@@ -23,6 +23,7 @@ return array(
     'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'V17Development\\FlarumUserBadges\\' => array($vendorDir . '/v17development/flarum-user-badges/src'),
+    'Tunna\\UserPoints\\' => array($vendorDir . '/tunnaduong/flarum-ext-user-points/src'),
     'Tobscure\\JsonApi\\' => array($vendorDir . '/sycho/json-api/src'),
     'TijsVerkoyen\\CssToInlineStyles\\' => array($vendorDir . '/tijsverkoyen/css-to-inline-styles/src'),
     'Therealsujitk\\GIFs\\' => array($vendorDir . '/therealsujitk/flarum-ext-gifs/src'),

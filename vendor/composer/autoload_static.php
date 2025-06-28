@@ -96,6 +96,7 @@ class ComposerStaticInit48252e6b695eb395ae67d3d5216183d4
         ),
         'T' => 
         array (
+            'Tunna\\UserPoints\\' => 17,
             'Tobscure\\JsonApi\\' => 17,
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
             'Therealsujitk\\GIFs\\' => 19,
@@ -384,6 +385,10 @@ class ComposerStaticInit48252e6b695eb395ae67d3d5216183d4
         'V17Development\\FlarumUserBadges\\' => 
         array (
             0 => __DIR__ . '/..' . '/v17development/flarum-user-badges/src',
+        ),
+        'Tunna\\UserPoints\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tunnaduong/flarum-ext-user-points/src',
         ),
         'Tobscure\\JsonApi\\' => 
         array (

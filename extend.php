@@ -40,10 +40,10 @@ return [
                 <img src="/assets/logo.png" alt="Logo" class="w-[100px] mb-3">
                 <h2 class="font-bold text-[1rem]">Diễn đàn học sinh Chuyên Biên Hòa</h2>
                 <div class="flex items-center gap-2 !mt-3 text-[20px]">
-                    <a href="https://facebook.com/cbhyouthonline" style="text-decoration: none;" target="_blank" class="rounded-full h-[35px] w-[35px] flex justify-center items-center bg-[#3b5998] text-white">
+                    <a href="https://facebook.com/cbhyouthonline" style="text-decoration: none;" target="_blank" class="rounded-full h-[35px] w-[35px] flex justify-center items-center bg-[#3b5998] !text-white">
                         <i class="fab fa-facebook"></i>
                     </a>
-                    <a href="https://github.com/tunnaduong/cbh-youth-online-php" style="text-decoration: none;" target="_blank" class="rounded-full h-[35px] w-[35px] flex justify-center items-center bg-black text-white">
+                    <a href="https://github.com/tunnaduong/cbh-youth-online-php" style="text-decoration: none;" target="_blank" class="rounded-full h-[35px] w-[35px] flex justify-center items-center bg-black !text-white">
                         <i class="fab fa-github"></i>
                     </a>
                 </div>
